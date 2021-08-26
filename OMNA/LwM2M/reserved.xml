@@ -86,7 +86,7 @@
     <Item>
         <ObjectIDStartRange>33455</ObjectIDStartRange>
         <ObjectIDEndRange>33504</ObjectIDEndRange>
-        <Company>ARM</Company>
+        <Company>Pelion</Company>
     </Item>
     <Item>
         <ObjectIDStartRange>33505</ObjectIDStartRange>
@@ -163,5 +163,25 @@
         <ObjectIDStartRange>34130</ObjectIDStartRange>
         <ObjectIDEndRange>34179</ObjectIDEndRange>
         <Company>Telecommunication Technology Association</Company>
+    </Item>
+         <Item>
+        <ObjectIDStartRange>34180</ObjectIDStartRange>
+        <ObjectIDEndRange>34229</ObjectIDEndRange>
+        <Company>Kerlink</Company>
+    </Item>
+        <Item>
+        <ObjectIDStartRange>34230</ObjectIDStartRange>
+        <ObjectIDEndRange>34279</ObjectIDEndRange>
+        <Company>NTT DOCOMO</Company>
+    </Item>
+        <Item>
+        <ObjectIDStartRange>34280</ObjectIDStartRange>
+        <ObjectIDEndRange>34329</ObjectIDEndRange>
+        <Company>Blackline Safety Corp</Company>
+    </Item>
+        <Item>
+        <ObjectIDStartRange>34330</ObjectIDStartRange>
+        <ObjectIDEndRange>34379</ObjectIDEndRange>
+        <Company>Itron</Company>
     </Item>
 </ReservedObjects>
