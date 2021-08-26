@@ -18,7 +18,7 @@
     <script src="../../Scripts/config.js"></script>
     <script src="../../Scripts/tabledregistries.js"></script>
     <script src="../../Scripts/lwm2m_xmlregistries.js"></script>
-    <script src="../../Scripts/getRepositoryInfo.js"></script>
+    <!-- <script type="module" src="../../Scripts/getRepositoryInfo.js"></script> -->
     <script>
         // function handleLogin() {
         //     const settings = {
@@ -32,7 +32,6 @@
 
         //     $.get(settings);
         // }
-
         function handleBranchSelectorChange(selectObject) {
             // Clear the errors when selecting a different release/branch
             $('#show-errors').hide(); 
@@ -41,9 +40,9 @@
 
             const selectObjValue = JSON.parse(selectObject.value);
 
-            const tagName = selectObjValue.tagName;
-            const branchName = selectObjValue.branchName;
-            const url = selectObjValue.url;
+            const {tagName} = selectObjValue;
+            const {branchName} = selectObjValue;
+            const {url} = selectObjValue;
 
             if (tagName)
             history.pushState({'pageTitle':document.title},'',`?releaseTagName=${tagName}`)
@@ -56,7 +55,7 @@
             TablesWithRowspanStyleChanges();
         }
 
-        function handleSaveGithubCrendentials() {
+        function handleSaveGithubCredentials() {
             // $('#github-credentials-form').serializeArray();
             const username = $('#username').val();
             const password = $('#user-access-token').val();
@@ -104,7 +103,7 @@
         };
 
         // On back button
-        window.onpopstate = function(e){
+        window.onpopstate = (e) => {
             if(e.state){
                 window.location.href = window.location.href;
                 // document.getElementById("content").innerHTML = e.state.html;
@@ -116,20 +115,17 @@
 
 
     </script>
-    <script>
-        $(document).ready(function () {
-            const owner = config.owner;
-            const repo = config.repo;
-            const productionBranchName = config.productionBranchName;
-            const testBranchName = config.testBranchName;
-            const devBranchName = config.devBranchName;
-            const testUrlPrefix = config.testUrlPrefix;
-            const devUrlPrefix = config.devUrlPrefix;
+    <script type="module">
+        import {getRepositoryInfo} from "../../Scripts/getRepositoryInfo.js";
+
+        $(document).ready( () => {
+            const {owner,repo,productionBranchName,testBranchName,devBranchName,testUrlPrefix,devUrlPrefix,showBranchSelectionQueryParameter} = config;
 
             $('#header').load("../../header.html");
             $('#footer').load("../../footer.html");
 
-            const githubAuth = window.localStorage.githubAuth;
+            const {githubAuth} = window.localStorage;
+
             if (!githubAuth) {
                 $('#github-credentials-form').show();
                 $('#github-credentials-remove-button').hide();
@@ -175,26 +171,19 @@
                 // selectObj.dispatchEvent(new Event('change'));
             }
 
-            //$('#LwM2MObjects').load("LwM2MObjects.html", function () { SetUpExpandableTDs(); TablesWithRowspanStyleChanges(); });
+            // $('#LwM2MObjects').load("LwM2MObjects.html", function () { SetUpExpandableTDs(); TablesWithRowspanStyleChanges(); });
             // For when using a clone Github repository as a submodule to get the DDF.xml file:
             // DisplayXML('../../lwm2m-registry/DDF.xml', '../../lwm2m-registry/reserved.xml', '../../lwm2m-registry/Common.xml');
             // For when using web server rewrite rules to rewrite /tech/profiles/lwm2m/DDF.xml to https://raw.githubusercontent.com/OpenMobileAlliance/trial/dev/DDF.xml
             const urlParams = new URLSearchParams(window.location.search);
 
             let branchName = urlParams.get('branchName') || urlParams.get('releaseTagName') || undefined;
+            const showBranchSelection = urlParams.get(showBranchSelectionQueryParameter);
 
-            if (window.location.host.startsWith(devUrlPrefix) || window.location.host.startsWith(testUrlPrefix)) {
-                if (!branchName) {  
-                    if (window.location.host.startsWith(devUrlPrefix)) {
-                        // $environmentURL = 'https://testwww.openmobilealliance.org/tech/profiles/lwm2m/';
-                        branchName = devBranchName;                    
-
-                    } else if (window.location.host.startsWith(testUrlPrefix)) {
-                        // $environmentURL = window.location.protocol + "//" + window.location.host + '/tech/profiles/lwm2m/'; // It's running on OMA server setup with URL rewriting to Github repository for DDF.xml, etc
-                        branchName = testBranchName;
-                        
-                    }
-                }
+            // if (window.location.host.startsWith(devUrlPrefix) || window.location.host.startsWith(testUrlPrefix)) {
+            if (showBranchSelection) {
+                if (!branchName)
+                    branchName = productionBranchName;
 
                 // Once the page has loaded, show the branch selection options
                 $('#branch-selection').show();
@@ -202,9 +191,8 @@
                 const environmentUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branchName}`; 
                 getRepositoryInfo(owner,repo, () => {setSelectedValue($('#branch-selector-dd'), environmentUrl)}) 
             } else {
-                if (!branchName) {
+                if (!branchName) 
                     branchName = productionBranchName;
-                }
 
                 // If production then hide the branch/tag selector
                 $('#branch-selection').remove();
@@ -214,7 +202,7 @@
                 setSelectedValue($('#branch-selector-dd'), environmentUrl);
             }
 
-
+        });
             // const options = $('#branch-selector-dd')[0].options;
             // let found = false;
             // for (let i=0;i<options.length;i+=1) {
@@ -236,7 +224,7 @@
             //     $('#branch-selector-dd').val('')
             // }
 
-        });
+       
     </script>
     <script src="../../Scripts/googleanalytics.js"></script>
 </head>
@@ -252,11 +240,11 @@
     <div id="branch-selection" hidden>
         <div id="github-info"></div>
         <div id="github-credentials">
-            <form id="github-credentials-form">
+            <div id="github-credentials-form">
                 <!-- <div id="github-credentials-form"> -->
-                    <span>Username: <input id="username" name="username" type="text"></span><span>Github Personal Access Token: <input id="user-access-token" name="user-access-token" type="password"></span><span><button onclick="handleSaveGithubCrendentials()">Use Github credentials</button></span><span>You can create a personal access token <a href="https://github.com/settings/tokens" target="_blank">here</a></span>
+                    <span>Username: <input id="username" name="username" type="text"></span><span>Github Personal Access Token: <input id="user-access-token" name="user-access-token" type="password"></span><span><button onclick="handleSaveGithubCredentials()">Use Github credentials</button></span><span>You can create a personal access token <a href="https://github.com/settings/tokens" target="_blank">here</a></span>
                 <!-- </div> -->
-            </form>
+            </div>
             <button id="github-credentials-remove-button" hidden onclick="handleRemoveGithubCredentials()">Remove Github credentials</button>
         </div>
         <div>

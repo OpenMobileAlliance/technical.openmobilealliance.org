@@ -6,4 +6,5 @@ const config = {
   testUrlPrefix: 'test',
   devBranchName: 'test',
   devUrlPrefix: 'localhost',
+  showBranchSelectionQueryParameter: 'show',
 };
