@@ -119,7 +119,7 @@
         import {getRepositoryInfo} from "../../Scripts/getRepositoryInfo.js";
 
         $(document).ready( () => {
-            const {owner,repo,productionBranchName,testBranchName,devBranchName,testUrlPrefix,devUrlPrefix,showBranchSelectionQueryParameter} = config;
+            const {owner,repo,productionBranchName,testBranchName,devBranchName,testUrlPrefix,devUrlPrefix,showBranchSelectionQueryString} = config;
 
             $('#header').load("../../header.html");
             $('#footer').load("../../footer.html");
@@ -178,7 +178,7 @@
             const urlParams = new URLSearchParams(window.location.search);
 
             let branchName = urlParams.get('branchName') || urlParams.get('releaseTagName') || undefined;
-            const showBranchSelection = urlParams.get(showBranchSelectionQueryParameter);
+            const showBranchSelection = urlParams.get(showBranchSelectionQueryString);
 
             // if (window.location.host.startsWith(devUrlPrefix) || window.location.host.startsWith(testUrlPrefix)) {
             if (showBranchSelection) {
