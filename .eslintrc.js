@@ -4,13 +4,13 @@ module.exports = {
     es2020: true,
     jquery: true,
   },
-  plugins: ['jsx-a11y', 'prettier'],
-  extends: ['airbnb-base', 'eslint:recommended', 'prettier', 'plugin:jsx-a11y/recommended'],
+  plugins: ['html'],
+  extends: ['airbnb-base', 'eslint:recommended', 'prettier'],
   parserOptions: {
     ecmaVersion: 11,
     project: 'tsconfig.json',
   },
-  rules: { 'no-unused-vars': 'off', 'no-use-before-define': 'off' },
+  rules: { 'no-unused-vars': 'off', 'no-use-before-define': 'off', 'import/extensions': [0, { js: 'always' }] },
 
   // rules: {},
 };

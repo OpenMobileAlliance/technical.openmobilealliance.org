@@ -1,12 +1,32 @@
+/* eslint-disable import/prefer-default-export */
 /* exported getRepositoryInfo */
-function getRepositoryInfo(owner, repo, setSelectedOption) {
+
+// eslint-disable-next-line import/no-unresolved
+import { Octokit } from 'https://cdn.skypack.dev/@octokit/rest';
+
+export function getRepositoryInfo(owner, repo, setSelectedOption) {
   const { githubAuth } = window.localStorage;
 
   let githubCreds;
   if (githubAuth) {
     try {
       githubCreds = JSON.parse(githubAuth);
-    } catch {}
+    } catch {
+      console.error('Unable to parse the github credentials');
+    }
+  }
+
+  const octokit =
+    githubCreds &&
+    githubCreds.userAccessToken &&
+    new Octokit({
+      auth: githubCreds.userAccessToken,
+    });
+
+  if (octokit) {
+    console.debug('success', octokit);
+  } else {
+    console.debug('failure', octokit);
   }
 
   const auth = githubCreds && btoa(`${githubCreds.username}:${githubCreds.userAccessToken}`);
@@ -79,6 +99,7 @@ function getRepositoryInfo(owner, repo, setSelectedOption) {
         headers,
         dataType: 'json',
         success(branchesData, branchesTextStatus, branchesRequest) {
+          console.debug('branchesRequest', branchesRequest.getAllResponseHeaders());
           $('#github-info').html(
             `You have ${branchesRequest.getResponseHeader('X-RateLimit-Remaining')} github API requests remaining. Resets at ${new Date(
               branchesRequest.getResponseHeader('X-RateLimit-Reset') * 1000
@@ -104,11 +125,13 @@ function getRepositoryInfo(owner, repo, setSelectedOption) {
           setSelectedOption();
         },
         error(request, textStatus, errorThrow) {
+          console.debug('error2', errorThrow.message);
           handleError(request, textStatus, errorThrow);
         },
       });
     },
     error(request, textStatus, errorThrow) {
+      console.debug('error', errorThrow.message);
       handleError(request, textStatus, errorThrow);
     },
   });
