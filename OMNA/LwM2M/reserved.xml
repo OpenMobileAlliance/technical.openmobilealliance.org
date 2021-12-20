@@ -189,4 +189,9 @@
         <ObjectIDEndRange>34429</ObjectIDEndRange>
         <Company>Arad Group</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>34430</ObjectIDStartRange>
+        <ObjectIDEndRange>34449</ObjectIDEndRange>
+        <Company>Comsel System Ltd</Company>
+    </Item>
 </ReservedObjects>
