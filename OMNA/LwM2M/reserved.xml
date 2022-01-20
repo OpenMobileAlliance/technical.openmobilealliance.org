@@ -194,4 +194,9 @@
         <ObjectIDEndRange>34449</ObjectIDEndRange>
         <Company>Comsel System Ltd</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>34450</ObjectIDStartRange>
+        <ObjectIDEndRange>34499</ObjectIDEndRange>
+        <Company>Adeunis</Company>
+    </Item>
 </ReservedObjects>
