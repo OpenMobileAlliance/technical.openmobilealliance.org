@@ -199,4 +199,9 @@
         <ObjectIDEndRange>34499</ObjectIDEndRange>
         <Company>Adeunis</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>34500</ObjectIDStartRange>
+        <ObjectIDEndRange>34549</ObjectIDEndRange>
+        <Company>QRTECH AB</Company>
+    </Item>
 </ReservedObjects>
