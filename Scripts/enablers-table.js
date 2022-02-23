@@ -83,7 +83,7 @@ const createEnablerInfoTitle = (item, config) => {
   div.setAttribute('class', 'enabler-url');
 
   const link = document.createElement('a');
-  link.setAttribute('href', `${config.ftp}${item.abb}`);
+  link.setAttribute('href', `${config.ftp}${item.abbreviation}`);
   link.setAttribute('target', 'blank');
 
   link.appendChild(document.createTextNode(`${item.name} - `));
