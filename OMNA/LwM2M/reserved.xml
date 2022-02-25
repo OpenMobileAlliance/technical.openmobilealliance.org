@@ -214,4 +214,9 @@
         <ObjectIDEndRange>34649</ObjectIDEndRange>
         <Company>Walt Technologies</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>34650</ObjectIDStartRange>
+        <ObjectIDEndRange>34699</ObjectIDEndRange>
+        <Company>WEPTECH elektronik GmbH</Company>
+    </Item>
 </ReservedObjects>
