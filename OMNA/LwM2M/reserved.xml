@@ -219,4 +219,9 @@
         <ObjectIDEndRange>34699</ObjectIDEndRange>
         <Company>WEPTECH elektronik GmbH</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>34700</ObjectIDStartRange>
+        <ObjectIDEndRange>34749</ObjectIDEndRange>
+        <Company>PSsystec</Company>
+    </Item>
 </ReservedObjects>
