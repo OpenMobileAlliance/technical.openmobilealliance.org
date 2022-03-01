@@ -7,14 +7,30 @@ const createAndPopulateEnablersTable = function createAndPopulateEnablersTable()
   window.console.info('We are about to start rendering the OMA Enablers!');
   return fetchEnablers()
     .then(renderEnablers)
+    .then(applayDynamicTable)
     .catch(window.console.error);
+}
+
+const applayDynamicTable = (data) => {
+  $(document).ready(() => {
+    window.console.info('Applayng Dynamic Table')
+    $('#table-of-enablers').DataTable({
+      columns: [
+        { orderable: true },
+        { orderable: false },
+        { orderable: false },
+        { orderable: false }
+      ]
+    });
+  });
+  return data;
 }
 
 const fetchEnablers = function fetchEnablers() {
   window.console.info('Start fetching enablers data');
   return $.getJSON('/enablers.json')
-    .done(function (response) { return response})
-    .catch(function (response) {
+    .done(response => response)
+    .catch((response) => {
       window.console.error(response.status);
       return [];
     })
@@ -30,7 +46,8 @@ const generateTable = function generateTable(data) {
   let result = ''
   if (data && data.enablers.length > 0) {
     const table = document.createElement('table');
-    table.setAttribute('class', 'enablers-data')
+    table.setAttribute('class', 'enablers-data');
+    table.setAttribute('id', 'table-of-enablers');
     table.appendChild(createTableHeader());
     const tbody = document.createElement('tbody');
     const config = {};
@@ -208,19 +225,19 @@ const populateResourcesCell =function populateResourcesCell(row, config) {
     let iconImg = ''
 
     if (resourceType === 'Overview') {
-      url = `${config.ftp}${row.abbreviation}/${resource.url}` 
+      url = `${config.ftp}${row.abbreviation}/${resource.url}`
       iconImg = 'fas fa-file'
     } else if (resourceType === 'API') {
-      url = resource.url 
+      url = resource.url
       iconImg = 'fas fa-search'
     } else if (resourceType === 'Issue') {
-      url = resource.url 
+      url = resource.url
       iconImg = 'fas fa-check'
     } else if (resourceType === 'Tool') {
-      url = resource.url 
+      url = resource.url
       iconImg = 'fas fa-wrench'
     } else if (resourceType === 'Registry') {
-      url = resource.url 
+      url = resource.url
       iconImg = 'fab fa-github'
     }
 
