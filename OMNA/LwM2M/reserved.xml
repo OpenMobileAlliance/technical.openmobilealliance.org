@@ -199,4 +199,29 @@
         <ObjectIDEndRange>34499</ObjectIDEndRange>
         <Company>Adeunis</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>34500</ObjectIDStartRange>
+        <ObjectIDEndRange>34549</ObjectIDEndRange>
+        <Company>QRTECH AB</Company>
+    </Item>
+    <Item>
+        <ObjectIDStartRange>34550</ObjectIDStartRange>
+        <ObjectIDEndRange>34599</ObjectIDEndRange>
+        <Company>Friendly Technologies</Company>
+    </Item>
+    <Item>
+        <ObjectIDStartRange>34600</ObjectIDStartRange>
+        <ObjectIDEndRange>34649</ObjectIDEndRange>
+        <Company>Walt Technologies</Company>
+    </Item>
+    <Item>
+        <ObjectIDStartRange>34650</ObjectIDStartRange>
+        <ObjectIDEndRange>34699</ObjectIDEndRange>
+        <Company>WEPTECH elektronik GmbH</Company>
+    </Item>
+    <Item>
+        <ObjectIDStartRange>34700</ObjectIDStartRange>
+        <ObjectIDEndRange>34749</ObjectIDEndRange>
+        <Company>PSsystec</Company>
+    </Item>
 </ReservedObjects>
