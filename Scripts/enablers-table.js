@@ -226,13 +226,13 @@ const populateResourcesCell =function populateResourcesCell(row, config) {
 
     if (resourceType === 'Overview') {
       url = `${config.ftp}${row.abbreviation}/${resource.url}`
-      iconImg = 'fas fa-file'
+      iconImg = 'fas fa-book'
     } else if (resourceType === 'API') {
       url = resource.url
       iconImg = 'fas fa-search'
     } else if (resourceType === 'Issue') {
       url = resource.url
-      iconImg = 'fas fa-check'
+      iconImg = 'fas fa-bug'
     } else if (resourceType === 'Tool') {
       url = resource.url
       iconImg = 'fas fa-wrench'
