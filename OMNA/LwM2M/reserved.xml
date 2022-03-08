@@ -224,4 +224,9 @@
         <ObjectIDEndRange>34749</ObjectIDEndRange>
         <Company>PSsystec</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>34750</ObjectIDStartRange>
+        <ObjectIDEndRange>34799</ObjectIDEndRange>
+        <Company>Deutsche Telekom</Company>
+    </Item>
 </ReservedObjects>
