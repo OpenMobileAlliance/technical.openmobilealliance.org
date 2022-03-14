@@ -270,3 +270,13 @@ header > nav .feedback-item {
 }
 .enabler-url {
 }
+
+.dataTables_filter {
+  width: 75%;
+}
+.dataTables_filter label {
+  width: 100%;
+}
+.dataTables_filter label input {
+  width: 80%;
+}
