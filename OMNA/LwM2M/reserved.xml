@@ -229,4 +229,9 @@
         <ObjectIDEndRange>34799</ObjectIDEndRange>
         <Company>Deutsche Telekom</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>34800</ObjectIDStartRange>
+        <ObjectIDEndRange>34849</ObjectIDEndRange>
+        <Company>Visive Group Ltd.</Company>
+    </Item>
 </ReservedObjects>
