@@ -5313,7 +5313,7 @@
       }
     },
     {
-      "name": "OMA Lock And Wipe Management Object",
+      "name": "OMA LWM2M Object Lock and Wipe",
       "abbreviation": "LWM2M_LOCKWIPE",
       "data": {
         "resources": [
