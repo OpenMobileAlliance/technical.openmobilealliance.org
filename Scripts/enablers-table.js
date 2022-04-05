@@ -68,7 +68,7 @@ const generateTable = function generateTable(data) {
 }
 
 const createTableHeader = function createTableHeader() {
-  const ENABLRS_TABLE_HEADER_ITEMS = ['List of Releases', 'Resources', 'OMA Status - Candidate', 'OMA Status - Release'];
+  const ENABLRS_TABLE_HEADER_ITEMS = ['List of Releases  - Directory Names', 'Resources', 'OMA Status - Candidate', 'OMA Status - Release'];
   const thead = document.createElement('thead');
   const tr = document.createElement('tr');
 
