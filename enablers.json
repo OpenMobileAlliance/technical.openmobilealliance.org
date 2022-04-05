@@ -5514,7 +5514,7 @@
       }
     },
     {
-      "name": "OMA LightweightM2M",
+      "name": "OMA LightweightM2M (LwM2M)",
       "logo": "./Images/OMA-129 Lightweight M2M Logo_RGB_full.jpg",
       "abbreviation": "LightweightM2M",
       "data": {
