@@ -1283,7 +1283,7 @@
       }
     },
     {
-      "name": "Client-Side Enabler API Requirements",
+      "name": "OMA Client Side Enabler API",
       "abbreviation": "CSEA",
       "data": {
         "resources": [
