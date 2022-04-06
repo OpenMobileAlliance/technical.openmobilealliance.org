@@ -1525,7 +1525,7 @@
       }
     },
     {
-      "name": "OMA Client Provisioning",
+      "name": "OMA Client Provisioning (CP)",
       "abbreviation": "ClientProv",
       "data": {
         "resources": [
@@ -3226,7 +3226,7 @@
       }
     },
     {
-      "name": "OMA Download over the Air",
+      "name": "OMA Download over the Air (DLOTA)",
       "abbreviation": "Download",
       "data": {
         "resources": [
@@ -4798,7 +4798,7 @@
       }
     },
     {
-      "name": "OMA Lock And Wipe Management Object",
+      "name": "OMA Lock And Wipe Management Object (LAWMO)",
       "abbreviation": "LAW_MO",
       "data": {
         "resources": [
