@@ -264,12 +264,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/Autho4API/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/Autho4API/EVP"
           },
 		  {
@@ -333,12 +333,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/BCAST/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/BCAST/EVP"
           },
 		  {
@@ -627,12 +627,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/Browsing/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/Browsing/EVP"
           },
 		  {
@@ -1224,12 +1224,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/CPNS/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/CPNS/EVP"
           },
 		  {
@@ -1429,12 +1429,12 @@
         "resources": [
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/Charging/EVP"
           },
 		  {
             "name": "README",
-            "resourceType": "Overview",
+            "resourceType": "Registry",
             "url": "README.txt"
           },
           {
@@ -1576,7 +1576,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/ClientProv/ETS"
           },
 		  {
@@ -1658,7 +1658,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/Client_Side_CS_FW/ETS"
           },
 		  {
@@ -1895,12 +1895,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/DCD/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/DCD/EVP"
           },
 		  {
@@ -1982,12 +1982,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/DCMO/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/DCMO/EVP"
           },
 		  {
@@ -2081,12 +2081,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/DM/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/DM/EVP"
           },
 		  {
@@ -2370,12 +2370,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/DM_SC/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/DM_SC/EVP"
           },
 		  {
@@ -2457,7 +2457,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/DM_Scheduling/ETS"
           },
 		  {
@@ -2592,12 +2592,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/DPE/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/DPE/EVP"
           },
 		  {
@@ -2655,12 +2655,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/DRM/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/DRM/EVP"
           },
 		  {
@@ -2832,7 +2832,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/DS/ETS"
           },
 		  {
@@ -3191,12 +3191,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/DiagMon/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/DiagMon/EVP"
           },
 		  {
@@ -3367,12 +3367,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/Download/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/Download/EVP"
           },
 		  {
@@ -3719,7 +3719,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/EmailNot/ETS"
           },
 		  {
@@ -3777,7 +3777,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/FUMO/ETS"
           },
 		  {
@@ -4343,12 +4343,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/HTML_Deployment_Suite/ETS"
           },
           {
             "name": "TFP",
-            "resourceType": "Registry",
+            "resourceType": "TFP",
             "url": "https://www.openmobilealliance.org/release/HTML_Deployment_Suite/TFP"
           },
 		  {
@@ -4574,7 +4574,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/IMPS/ETS"
           },
 		  {
@@ -5228,7 +5228,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/LPPe/ETS"
           },
 		  {
@@ -5696,12 +5696,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/LightweightM2M/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/LightweightM2M/EVP"
           },
           {
@@ -6486,7 +6486,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/MLS/ETS"
           },
 		  {
@@ -6747,12 +6747,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/MMS/ETS"
           },
           {
             "name": "TFP",
-            "resourceType": "Registry",
+            "resourceType": "TFP",
             "url": "https://www.openmobilealliance.org/release/MMS/TFP"
           },
 		  {
@@ -7236,12 +7236,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/MobileCodes/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/MobileCodes/EVP"
           },
 		  {
@@ -7647,7 +7647,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/OCSP/ETS"
           },
 		  {
@@ -9852,7 +9852,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/PoC/ETS"
           },
 		  {
@@ -10113,12 +10113,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/PresenceSIMPLE/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/PresenceSIMPLE/EVP"
           },
 		  {
@@ -10343,12 +10343,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/Push/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/Push/EVP"
           },
 		  {
@@ -10448,12 +10448,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/PushRest/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/PushRest/EVP"
           },
 		  {
@@ -10564,12 +10564,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/RCS_Deployment_Suite/ETS"
           },
           {
             "name": "TFP",
-            "resourceType": "Registry",
+            "resourceType": "TFP",
             "url": "https://www.openmobilealliance.org/release/RCS_Deployment_Suite/TFP"
           },
 		  {
@@ -11960,12 +11960,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/SCOMO/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/SCOMO/EVP"
           },
 		  {
@@ -12071,17 +12071,17 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/SCWS/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/SCWS/EVP"
           },
           {
             "name": "TFP",
-            "resourceType": "Registry",
+            "resourceType": "TFP",
             "url": "https://www.openmobilealliance.org/release/SCWS/TFP"
           },
 		  {
@@ -12288,12 +12288,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/SIMPLE_IM/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/SIMPLE_IM/EVP"
           },
 		  {
@@ -12434,12 +12434,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/SNeW/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/SNeW/EVP"
           },
 		  {
@@ -12544,12 +12544,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/SRM/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/SRM/EVP"
           },
 		  {
@@ -12631,7 +12631,7 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/STI/ETS"
           },
 		  {
@@ -12689,17 +12689,17 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/SUPL/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/SUPL/EVP"
           },
           {
             "name": "TFP",
-            "resourceType": "Registry",
+            "resourceType": "TFP",
             "url": "https://www.openmobilealliance.org/release/SUPL/TFP"
           },
 		  {
@@ -12995,12 +12995,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/SVG/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/SVG/EVP"
           },
 		  {
@@ -13713,7 +13713,7 @@
         "resources": [
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/URI_Schemes/EVP"
           },
 		  {
@@ -13918,7 +13918,7 @@
         "resources": [
           {
             "name": "TFP",
-            "resourceType": "Registry",
+            "resourceType": "TFP",
             "url": "https://www.openmobilealliance.org/release/WCSS/TFP"
           },
 		  {
@@ -14046,12 +14046,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/WRAPI/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/WRAPI/EVP"
           },
 		  {
@@ -14103,12 +14103,12 @@
         "resources": [
           {
             "name": "ETS",
-            "resourceType": "Registry",
+            "resourceType": "ETS",
             "url": "https://www.openmobilealliance.org/release/XDM/ETS"
           },
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/XDM/EVP"
           },
 		  {
@@ -14393,7 +14393,7 @@
         "resources": [
           {
             "name": "EVP",
-            "resourceType": "Registry",
+            "resourceType": "EVP",
             "url": "https://www.openmobilealliance.org/release/vObject/EVP"
           },
 		  {
