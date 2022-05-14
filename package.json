@@ -30,6 +30,6 @@
     "prettier": "^2.3.2"
   },
   "dependencies": {
-    "@octokit/rest": "^18.11.4"
+    "@octokit/rest": "^18.12.0"
   }
 }
