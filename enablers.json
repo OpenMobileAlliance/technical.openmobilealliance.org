@@ -8276,47 +8276,6 @@
       }
     },
     {
-      "name": "OMA LwM2M Object CO Detector",
-      "abbreviation": "ObjLwM2M_CO_Detector",
-      "data": {
-        "resources": [
-          {
-            "name": "README",
-            "resourceType": "Overview",
-            "url": "README.txt"
-          },
-          {
-            "name": "Search",
-            "resourceType": "API",
-            "url": "http://www.openmobilealliance.org/xxx/"
-          },
-          {
-            "name": "Bugs",
-            "resourceType": "Issue",
-            "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
-          }
-        ],
-        "publications": [
-          {
-            "url": "ObjLwM2M_COSE/README.txt",
-            "file": "README.txt",
-            "status": "",
-            "version": "",
-            "date": "",
-            "contentMediaType": "text/plain"
-          }
-        ],
-        "versions": [
-          {
-            "name": "V1_0-20200717-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2020-07-17"
-          }
-        ]
-      }
-    },
-    {
       "name": "OMA LWM2M Cellular Connectivity",
       "abbreviation": "ObjLwM2M_Cell_Conn",
       "data": {
@@ -8572,47 +8531,6 @@
             "status": "Approved",
             "version": "V1.2",
             "date": "2020-11-10"
-          }
-        ]
-      }
-    },
-    {
-      "name": "OMA LwM2M Object Fire Alarm",
-      "abbreviation": "ObjLwM2M_Fire_Alarm",
-      "data": {
-        "resources": [
-          {
-            "name": "README",
-            "resourceType": "Overview",
-            "url": "README.txt"
-          },
-          {
-            "name": "Search",
-            "resourceType": "API",
-            "url": "http://www.openmobilealliance.org/xxx/"
-          },
-          {
-            "name": "Bugs",
-            "resourceType": "Issue",
-            "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
-          }
-        ],
-        "publications": [
-          {
-            "url": "ObjLwM2M_Device/README.txt",
-            "file": "README.txt",
-            "status": "",
-            "version": "",
-            "date": "",
-            "contentMediaType": "text/plain"
-          }
-        ],
-        "versions": [
-          {
-            "name": "V1_0-20170717-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2017-07-17"
           }
         ]
       }
