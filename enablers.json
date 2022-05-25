@@ -12866,47 +12866,6 @@
       }
     },
     {
-      "name": "OMA Service User Profile Management",
-      "abbreviation": "SUPM",
-      "data": {
-        "resources": [
-          {
-            "name": "README",
-            "resourceType": "Overview",
-            "url": "README.txt"
-          },
-          {
-            "name": "Search",
-            "resourceType": "API",
-            "url": "http://www.openmobilealliance.org/xxx/"
-          },
-          {
-            "name": "Bugs",
-            "resourceType": "Issue",
-            "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
-          }
-        ],
-        "publications": [
-          {
-            "url": "SUPM/README.txt",
-            "file": "README.txt",
-            "status": "",
-            "version": "",
-            "date": "",
-            "contentMediaType": "text/plain"
-          }
-        ],
-        "versions": [
-          {
-            "name": "V1_0-20120529-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2012-05-29"
-          }
-        ]
-      }
-    },
-    {
       "name": "OMA Scalable Vector Graphics (SVG) Mobile Domain",
       "abbreviation": "SVG",
       "data": {
