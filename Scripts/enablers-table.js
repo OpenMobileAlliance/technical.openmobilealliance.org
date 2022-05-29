@@ -241,10 +241,10 @@ const populateResourcesCell =function populateResourcesCell(row, config) {
       iconImg = 'fab fa-github'
     } else if (resourceType === 'ETS') {
       url = resource.url
-      iconImg = 'fad fa-vial'
+      iconImg = 'fas fa-flask'
     } else if (resourceType === 'EVP') {
       url = resource.url
-      iconImg = 'fal fa-vial'
+      iconImg = 'fas fa-cubes'
     } else if (resourceType === 'TFP') {
       url = resource.url
       iconImg = 'fas fa-vial'
