@@ -263,6 +263,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/Autho4API/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/Autho4API/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -321,6 +331,16 @@
       "abbreviation": "BCAST",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/BCAST/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/BCAST/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -605,6 +625,16 @@
       "abbreviation": "Browsing",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/Browsing/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/Browsing/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -1193,6 +1223,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/CPNS/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/CPNS/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -1283,7 +1323,7 @@
       }
     },
     {
-      "name": "Client-Side Enabler API Requirements",
+      "name": "OMA Client Side Enabler API",
       "abbreviation": "CSEA",
       "data": {
         "resources": [
@@ -1388,8 +1428,13 @@
       "data": {
         "resources": [
           {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/Charging/EVP"
+          },
+          {
             "name": "README",
-            "resourceType": "Overview",
+            "resourceType": "Registry",
             "url": "README.txt"
           },
           {
@@ -1525,10 +1570,15 @@
       }
     },
     {
-      "name": "OMA Client Provisioning",
+      "name": "OMA Client Provisioning (CP)",
       "abbreviation": "ClientProv",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/ClientProv/ETS"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -1606,6 +1656,11 @@
       "abbreviation": "Client_Side_CS_FW",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/Client_Side_CS_FW/ETS"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -1839,6 +1894,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/DCD/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/DCD/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -1915,6 +1980,16 @@
       "abbreviation": "DCMO",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/DCMO/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/DCMO/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -2004,6 +2079,16 @@
       "abbreviation": "DM",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/DM/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/DM/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -2284,6 +2369,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/DM_SC/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/DM_SC/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -2360,6 +2455,11 @@
       "abbreviation": "DM_Scheduling",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/DM_Scheduling/ETS"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -2491,6 +2591,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/DPE/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/DPE/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -2543,6 +2653,16 @@
       "abbreviation": "DRM",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/DRM/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/DRM/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -2710,6 +2830,11 @@
       "abbreviation": "DS",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/DS/ETS"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -3065,6 +3190,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/DiagMon/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/DiagMon/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -3226,10 +3361,20 @@
       }
     },
     {
-      "name": "OMA Download over the Air",
+      "name": "OMA Download over the Air (DLOTA)",
       "abbreviation": "Download",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/Download/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/Download/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -3573,6 +3718,11 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/EmailNot/ETS"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -3625,6 +3775,11 @@
       "abbreviation": "FUMO",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/FUMO/ETS"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -4187,6 +4342,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/HTML_Deployment_Suite/ETS"
+          },
+          {
+            "name": "TFP",
+            "resourceType": "TFP",
+            "url": "https://www.openmobilealliance.org/release/HTML_Deployment_Suite/TFP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -4407,6 +4572,11 @@
       "abbreviation": "IMPS",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/IMPS/ETS"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -4798,7 +4968,7 @@
       }
     },
     {
-      "name": "OMA Lock And Wipe Management Object",
+      "name": "OMA Lock And Wipe Management Object (LAWMO)",
       "abbreviation": "LAW_MO",
       "data": {
         "resources": [
@@ -5057,6 +5227,11 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/LPPe/ETS"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -5313,7 +5488,7 @@
       }
     },
     {
-      "name": "OMA Lock And Wipe Management Object",
+      "name": "OMA LWM2M Object Lock and Wipe",
       "abbreviation": "LWM2M_LOCKWIPE",
       "data": {
         "resources": [
@@ -5514,11 +5689,21 @@
       }
     },
     {
-      "name": "OMA LightweightM2M",
+      "name": "OMA LightweightM2M (LwM2M)",
       "logo": "./Images/OMA-129 Lightweight M2M Logo_RGB_full.jpg",
       "abbreviation": "LightweightM2M",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/LightweightM2M/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/LightweightM2M/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -6300,6 +6485,11 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/MLS/ETS"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -6555,6 +6745,16 @@
       "abbreviation": "MMS",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/MMS/ETS"
+          },
+          {
+            "name": "TFP",
+            "resourceType": "TFP",
+            "url": "https://www.openmobilealliance.org/release/MMS/TFP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -7035,6 +7235,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/MobileCodes/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/MobileCodes/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -7435,6 +7645,11 @@
       "abbreviation": "OCSP",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/OCSP/ETS"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -8061,47 +8276,6 @@
       }
     },
     {
-      "name": "OMA LwM2M Object CO Detector",
-      "abbreviation": "ObjLwM2M_CO_Detector",
-      "data": {
-        "resources": [
-          {
-            "name": "README",
-            "resourceType": "Overview",
-            "url": "README.txt"
-          },
-          {
-            "name": "Search",
-            "resourceType": "API",
-            "url": "http://www.openmobilealliance.org/xxx/"
-          },
-          {
-            "name": "Bugs",
-            "resourceType": "Issue",
-            "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
-          }
-        ],
-        "publications": [
-          {
-            "url": "ObjLwM2M_COSE/README.txt",
-            "file": "README.txt",
-            "status": "",
-            "version": "",
-            "date": "",
-            "contentMediaType": "text/plain"
-          }
-        ],
-        "versions": [
-          {
-            "name": "V1_0-20200717-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2020-07-17"
-          }
-        ]
-      }
-    },
-    {
       "name": "OMA LWM2M Cellular Connectivity",
       "abbreviation": "ObjLwM2M_Cell_Conn",
       "data": {
@@ -8357,47 +8531,6 @@
             "status": "Approved",
             "version": "V1.2",
             "date": "2020-11-10"
-          }
-        ]
-      }
-    },
-    {
-      "name": "OMA LwM2M Object Fire Alarm",
-      "abbreviation": "ObjLwM2M_Fire_Alarm",
-      "data": {
-        "resources": [
-          {
-            "name": "README",
-            "resourceType": "Overview",
-            "url": "README.txt"
-          },
-          {
-            "name": "Search",
-            "resourceType": "API",
-            "url": "http://www.openmobilealliance.org/xxx/"
-          },
-          {
-            "name": "Bugs",
-            "resourceType": "Issue",
-            "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
-          }
-        ],
-        "publications": [
-          {
-            "url": "ObjLwM2M_Device/README.txt",
-            "file": "README.txt",
-            "status": "",
-            "version": "",
-            "date": "",
-            "contentMediaType": "text/plain"
-          }
-        ],
-        "versions": [
-          {
-            "name": "V1_0-20170717-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2017-07-17"
           }
         ]
       }
@@ -9636,6 +9769,11 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/PoC/ETS"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -9892,6 +10030,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/PresenceSIMPLE/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/PresenceSIMPLE/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -10112,6 +10260,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/Push/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/Push/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -10206,6 +10364,16 @@
       "abbreviation": "PushRest",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/PushRest/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/PushRest/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -10312,6 +10480,16 @@
       "abbreviation": "RCS_Deployment_Suite",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/RCS_Deployment_Suite/ETS"
+          },
+          {
+            "name": "TFP",
+            "resourceType": "TFP",
+            "url": "https://www.openmobilealliance.org/release/RCS_Deployment_Suite/TFP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -11699,6 +11877,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/SCOMO/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/SCOMO/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -11799,6 +11987,21 @@
       "abbreviation": "SCWS",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/SCWS/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/SCWS/EVP"
+          },
+          {
+            "name": "TFP",
+            "resourceType": "TFP",
+            "url": "https://www.openmobilealliance.org/release/SCWS/TFP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -12002,6 +12205,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/SIMPLE_IM/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/SIMPLE_IM/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -12138,6 +12351,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/SNeW/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/SNeW/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -12238,6 +12461,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/SRM/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/SRM/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -12315,6 +12548,11 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/STI/ETS"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -12367,6 +12605,21 @@
       "abbreviation": "SUPL",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/SUPL/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/SUPL/EVP"
+          },
+          {
+            "name": "TFP",
+            "resourceType": "TFP",
+            "url": "https://www.openmobilealliance.org/release/SUPL/TFP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -12613,51 +12866,20 @@
       }
     },
     {
-      "name": "OMA Service User Profile Management",
-      "abbreviation": "SUPM",
-      "data": {
-        "resources": [
-          {
-            "name": "README",
-            "resourceType": "Overview",
-            "url": "README.txt"
-          },
-          {
-            "name": "Search",
-            "resourceType": "API",
-            "url": "http://www.openmobilealliance.org/xxx/"
-          },
-          {
-            "name": "Bugs",
-            "resourceType": "Issue",
-            "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
-          }
-        ],
-        "publications": [
-          {
-            "url": "SUPM/README.txt",
-            "file": "README.txt",
-            "status": "",
-            "version": "",
-            "date": "",
-            "contentMediaType": "text/plain"
-          }
-        ],
-        "versions": [
-          {
-            "name": "V1_0-20120529-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2012-05-29"
-          }
-        ]
-      }
-    },
-    {
       "name": "OMA Scalable Vector Graphics (SVG) Mobile Domain",
       "abbreviation": "SVG",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/SVG/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/SVG/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -13367,6 +13589,11 @@
       "data": {
         "resources": [
           {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/URI_Schemes/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -13567,6 +13794,11 @@
       "data": {
         "resources": [
           {
+            "name": "TFP",
+            "resourceType": "TFP",
+            "url": "https://www.openmobilealliance.org/release/WCSS/TFP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -13690,6 +13922,16 @@
       "data": {
         "resources": [
           {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/WRAPI/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/WRAPI/EVP"
+          },
+          {
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
@@ -13736,6 +13978,16 @@
       "abbreviation": "XDM",
       "data": {
         "resources": [
+          {
+            "name": "ETS",
+            "resourceType": "ETS",
+            "url": "https://www.openmobilealliance.org/release/XDM/ETS"
+          },
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/XDM/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",
@@ -14016,6 +14268,11 @@
       "abbreviation": "vObject",
       "data": {
         "resources": [
+          {
+            "name": "EVP",
+            "resourceType": "EVP",
+            "url": "https://www.openmobilealliance.org/release/vObject/EVP"
+          },
           {
             "name": "README",
             "resourceType": "Overview",

@@ -68,7 +68,7 @@ const generateTable = function generateTable(data) {
 }
 
 const createTableHeader = function createTableHeader() {
-  const ENABLRS_TABLE_HEADER_ITEMS = ['List of Releases', 'Resources', 'OMA Status - Candidate', 'OMA Status - Release'];
+  const ENABLRS_TABLE_HEADER_ITEMS = ['List of Releases - Directory Names', 'Resources', 'OMA Status - Candidate', 'OMA Status - Release'];
   const thead = document.createElement('thead');
   const tr = document.createElement('tr');
 
@@ -226,13 +226,13 @@ const populateResourcesCell =function populateResourcesCell(row, config) {
 
     if (resourceType === 'Overview') {
       url = `${config.ftp}${row.abbreviation}/${resource.url}`
-      iconImg = 'fas fa-file'
+      iconImg = 'fas fa-book'
     } else if (resourceType === 'API') {
       url = resource.url
       iconImg = 'fas fa-search'
     } else if (resourceType === 'Issue') {
       url = resource.url
-      iconImg = 'fas fa-check'
+      iconImg = 'fas fa-bug'
     } else if (resourceType === 'Tool') {
       url = resource.url
       iconImg = 'fas fa-wrench'
