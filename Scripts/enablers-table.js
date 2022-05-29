@@ -239,6 +239,15 @@ const populateResourcesCell =function populateResourcesCell(row, config) {
     } else if (resourceType === 'Registry') {
       url = resource.url
       iconImg = 'fab fa-github'
+    } else if (resourceType === 'ETS') {
+      url = resource.url
+      iconImg = 'fad fa-vial'
+    } else if (resourceType === 'EVP') {
+      url = resource.url
+      iconImg = 'fal fa-vial'
+    } else if (resourceType === 'TFP') {
+      url = resource.url
+      iconImg = 'fas fa-vial'
     }
 
     link.setAttribute('href', url);
@@ -256,10 +265,10 @@ const populateResourcesCell =function populateResourcesCell(row, config) {
   return resources;
 }
 
-const selectVersionsByStatus = function selectVersionsByStatus(versions, status) {
+const selectVersionsByStatus = function selectVersionsByStatus(versions, statuses) {
     const result = [];
     versions.forEach((version) => {
-      if (version.status === status) {
+      if (statuses.includes(version.status)) {
         result.push(version);
       }
     });
@@ -269,15 +278,17 @@ const selectVersionsByStatus = function selectVersionsByStatus(versions, status)
 const populateCandidateCell = function populateCandidateCell(row, config) {
   const omaCandidateStatus = document.createElement('td');
   if (row && row.data && row.data.versions && row.data.versions.length > 0) {
-    const candidateSet = selectVersionsByStatus(row.data.versions, 'Candidate');
+    const candidateSet = selectVersionsByStatus(row.data.versions, ['Candidate', 'Historic']);
 
     candidateSet.reverse().forEach((item) => {
       const spanVersion = document.createElement('span');
       spanVersion.setAttribute('class', 'enabler-version');
       const link = document.createElement('a');
+      const linkText = item.status === 'Historic' ? item.name : item.version;
+
       link.setAttribute('href', `${config.ftp}${row.abbreviation}/${item.name}`);
       link.setAttribute('target', 'blank');
-      link.appendChild(document.createTextNode(`${item.version}`));
+      link.appendChild(document.createTextNode(`${linkText}`));
       spanVersion.appendChild(link);
 
       const spanDate = document.createElement('span');
@@ -296,7 +307,7 @@ const populateCandidateCell = function populateCandidateCell(row, config) {
 const populateReleaseCell =function populateReleaseCell(row, config) {
   const omaReleaseStatus = document.createElement('td');
   if (row && row.data && row.data.versions && row.data.versions.length > 0) {
-    const releaseSet = selectVersionsByStatus(row.data.versions, 'Approved');
+    const releaseSet = selectVersionsByStatus(row.data.versions, ['Approved']);
 
     releaseSet.reverse().forEach((item) => {
       const spanVersion = document.createElement('span');
