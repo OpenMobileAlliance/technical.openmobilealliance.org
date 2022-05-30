@@ -225,7 +225,9 @@ const populateResourcesCell =function populateResourcesCell(row, config) {
     let iconImg = ''
 
     if (resourceType === 'Overview') {
-      url = `${config.ftp}${row.abbreviation}/${resource.url}`
+      if (resourceType === "http" || resourceType === "https" ){
+          url = resource.url
+      } else {url = `${config.ftp}${row.abbreviation}/${resource.url}`}
       iconImg = 'fas fa-book'
     } else if (resourceType === 'API') {
       url = resource.url
