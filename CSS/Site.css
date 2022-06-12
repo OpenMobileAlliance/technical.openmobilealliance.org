@@ -232,12 +232,17 @@ header > nav .feedback-item {
   width: 50%;
 }
 
+.enablers-data th:nth-child(2) {
+  width: 20%;
+  text-align: center;
+}
+
 .enablers-data td {
   vertical-align: text-top;
 }
 
 .resource-link {
-  padding-right: 4px;
+  padding-right: 8px;
 }
 
 .enabler-resources {
@@ -279,4 +284,22 @@ header > nav .feedback-item {
 }
 .dataTables_filter label input {
   width: 80%;
+}
+
+.approved-td {
+  text-align: center;
+}
+
+.candidate-td {
+  text-align: center;
+}
+
+.link-historic-version {
+  color: #7C7C7C;
+}
+
+.link-approved-version {
+}
+
+.link-candidate-version {
 }

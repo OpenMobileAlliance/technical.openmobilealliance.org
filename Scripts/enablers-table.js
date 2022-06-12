@@ -82,11 +82,49 @@ const createTableHeader = function createTableHeader() {
   return thead;
 }
 
+const isCandidateVersionApproved = function isCandidateVersionApproved(versions, versionStr) {
+  const sameVarsionApproved = versions.filter((item) => ['Approved', 'Historic'].includes(item.status) && item.version === versionStr);
+  return sameVarsionApproved.length > 0;
+}
+
+const filterLastCandicatePerVersion = function filterLastCandicatePerVersion(versions, versionStr) {
+  const sameVersionCandidate = versions.filter(item => ['Candidate'].includes(item.status) && item.version === versionStr);
+  sameVersionCandidate.sort((a, b) => a.date > b.date);
+  sameVersionCandidate.forEach((item, index) => {
+    if (index === 0) {
+      item.important = true;
+    } else {
+      item.important = false;
+    }
+  });
+}
+
+const markInportantVersion = function markInportantVersion(item, index, items) {
+  item.important = true;
+  if (item.status === 'Candidate') {
+    // check if there is Approved or Historic version based on this one
+    if (isCandidateVersionApproved(items, item.version)) {
+      item.important = false;
+    } else {
+      filterLastCandicatePerVersion(items, item.version);
+    }
+  }
+};
+
+const prepareRowData = function prepareRowData(rowData) {
+  // Select most resent Candidate version
+  // that is not been Approved
+  if (rowData && rowData.versions && rowData.versions.length > 0) {
+   rowData.versions.forEach(markInportantVersion);
+  }
+}
+
 const createEnablerRow = function createEnablerRow(row, config) {
   const tr = document.createElement('tr');
   const info = Object.create(config);
 
   if (row) {
+    prepareRowData(row.data);
     tr.appendChild(populateListOfReleasesCell(row, info));
     tr.appendChild(populateResourcesCell(row, info));
     tr.appendChild(populateCandidateCell(row, info));
@@ -214,11 +252,11 @@ const populateListOfReleasesCell = function populateListOfReleasesCell(row, conf
   return listOfreleases;
 }
 
-const populateResourcesCell =function populateResourcesCell(row, config) {
+const populateResourcesCell = function populateResourcesCell(row, config) {
   const resources = document.createElement('td');
   const div = document.createElement('div');
   div.setAttribute('class', 'enabler-resources');
-  row.data.resources.forEach(resource => {
+  row.data.resources.forEach((resource, index, arr) => {
     const link = document.createElement('a');
     const resourceType = resource.resourceType
     let url = ''
@@ -260,6 +298,9 @@ const populateResourcesCell =function populateResourcesCell(row, config) {
     link.appendChild(icon)
 
     div.appendChild(link)
+    if (arr.length > 6 && index > 0 && index % 4 === 0 ) {
+      div.appendChild(document.createElement('br'));
+    }
   });
   resources.appendChild(div);
   return resources;
@@ -268,7 +309,7 @@ const populateResourcesCell =function populateResourcesCell(row, config) {
 const selectVersionsByStatus = function selectVersionsByStatus(versions, statuses) {
     const result = [];
     versions.forEach((version) => {
-      if (statuses.includes(version.status)) {
+      if (statuses.includes(version.status) && version.important) {
         result.push(version);
       }
     });
@@ -278,26 +319,28 @@ const selectVersionsByStatus = function selectVersionsByStatus(versions, statuse
 const populateCandidateCell = function populateCandidateCell(row, config) {
   const omaCandidateStatus = document.createElement('td');
   if (row && row.data && row.data.versions && row.data.versions.length > 0) {
-    const candidateSet = selectVersionsByStatus(row.data.versions, ['Candidate', 'Historic']);
+    const candidateSet = selectVersionsByStatus(row.data.versions, ['Candidate']);
 
     candidateSet.reverse().forEach((item) => {
       const spanVersion = document.createElement('span');
       spanVersion.setAttribute('class', 'enabler-version');
       const link = document.createElement('a');
-      const linkText = item.status === 'Historic' ? item.name : item.version;
+      const linkText = item.status === 'Historic' ? `${item.version} Historic` : item.version;
 
       link.setAttribute('href', `${config.ftp}${row.abbreviation}/${item.name}`);
       link.setAttribute('target', 'blank');
+      link.setAttribute('class', item.status === 'Historic' ? 'link-historic-version': 'link-candidate-version');
+
+      if (item.date) {
+        const dateStr = (new Date(item.date)).toLocaleDateString('en-US', {month: 'long', year: 'numeric'})
+        link.setAttribute('title', dateStr);
+      }
       link.appendChild(document.createTextNode(`${linkText}`));
       spanVersion.appendChild(link);
 
-      const spanDate = document.createElement('span');
-      spanDate.setAttribute('class', 'enabler-date')
-      spanDate.appendChild(document.createTextNode(item.date));
-
       omaCandidateStatus.appendChild(spanVersion);
-      omaCandidateStatus.appendChild(spanDate);
       omaCandidateStatus.appendChild(document.createElement('br'));
+      omaCandidateStatus.setAttribute('class', 'candidate-td');
     })
 
   }
@@ -307,24 +350,28 @@ const populateCandidateCell = function populateCandidateCell(row, config) {
 const populateReleaseCell =function populateReleaseCell(row, config) {
   const omaReleaseStatus = document.createElement('td');
   if (row && row.data && row.data.versions && row.data.versions.length > 0) {
-    const releaseSet = selectVersionsByStatus(row.data.versions, ['Approved']);
+    const releaseSet = selectVersionsByStatus(row.data.versions, ['Approved', 'Historic']);
 
     releaseSet.reverse().forEach((item) => {
       const spanVersion = document.createElement('span');
-      spanVersion.setAttribute('class', 'enabler-version')
+      spanVersion.setAttribute('class', 'enabler-version');
       const link = document.createElement('a');
+      const linkText = item.status === 'Historic' ? `${item.version} Historic` : item.version;
+
       link.setAttribute('href', `${config.ftp}${row.abbreviation}/${item.name}`);
       link.setAttribute('target', 'blank');
-      link.appendChild(document.createTextNode(`${item.version}`));
+      link.setAttribute('class', item.status === 'Historic' ? 'link-historic-version': 'link-approved-version');
+
+      if (item.date) {
+        const dateStr = (new Date(item.date)).toLocaleDateString('en-US', {month: 'long', year: 'numeric'});
+        link.setAttribute('title', dateStr);
+      }
+      link.appendChild(document.createTextNode(`${linkText}`));
       spanVersion.appendChild(link);
 
-      const spanDate = document.createElement('span');
-      spanDate.setAttribute('class', 'enabler-date')
-      spanDate.appendChild(document.createTextNode(item.date));
-
       omaReleaseStatus.appendChild(spanVersion);
-      omaReleaseStatus.appendChild(spanDate);
       omaReleaseStatus.appendChild(document.createElement('br'));
+      omaReleaseStatus.setAttribute('class', 'approved-td');
     })
   }
   return omaReleaseStatus;
