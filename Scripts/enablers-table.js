@@ -285,7 +285,7 @@ const populateResourcesCell = function populateResourcesCell(row, config) {
       iconImg = 'fas fa-cubes'
     } else if (resourceType === 'TFP') {
       url = resource.url
-      iconImg = 'fas fa-vial'
+      iconImg = 'fas fa-box'
     }
 
     link.setAttribute('href', url);
