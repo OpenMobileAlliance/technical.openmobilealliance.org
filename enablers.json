@@ -2863,12 +2863,6 @@
         ],
         "versions": [
           {
-            "name": "V1_1_2-20030612-A",
-            "status": "Approved",
-            "version": "V1.1.2",
-            "date": "2003-06-12"
-          },
-          {
             "name": "V1_1_2-20040721-A",
             "status": "Approved",
             "version": "V1.1.2",
