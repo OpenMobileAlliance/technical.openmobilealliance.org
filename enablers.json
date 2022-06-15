@@ -2128,12 +2128,6 @@
             "date": "2012-10-30"
           },
           {
-            "name": "V1_1_2-20031209-A",
-            "status": "Approved",
-            "version": "V1.1.2",
-            "date": "2003-12-09"
-          },
-          {
             "name": "V1_1_2-20040113-A",
             "status": "Approved",
             "version": "V1.1.2",
@@ -2863,12 +2857,6 @@
         ],
         "versions": [
           {
-            "name": "V1_1_2-20030612-A",
-            "status": "Approved",
-            "version": "V1.1.2",
-            "date": "2003-06-12"
-          },
-          {
             "name": "V1_1_2-20040721-A",
             "status": "Approved",
             "version": "V1.1.2",
@@ -2897,12 +2885,6 @@
             "status": "Approved",
             "version": "V1.2.1",
             "date": "2007-08-10"
-          },
-          {
-            "name": "V1_2_1-20070813-A",
-            "status": "Approved",
-            "version": "V1.2.1",
-            "date": "2007-08-13"
           },
           {
             "name": "V1_2_2-20090319-A",
@@ -9069,12 +9051,6 @@
             "date": "2013-02-26"
           },
           {
-            "name": "V3_0-20130924-A",
-            "status": "Approved",
-            "version": "V3.0",
-            "date": "2013-09-24"
-          },
-          {
             "name": "V3_0-20130924-H",
             "status": "Historic",
             "version": "V3.0",
@@ -10131,12 +10107,6 @@
             "status": "Approved",
             "version": "V1.0",
             "date": "2006-07-25"
-          },
-          {
-            "name": "V1_0_1-20061128-A",
-            "status": "Approved",
-            "version": "V1.0.1",
-            "date": "2006-11-28"
           },
           {
             "name": "V1_0_1-20061128-H",
@@ -14080,12 +14050,6 @@
             "status": "Candidate",
             "version": "V1.0",
             "date": "2006-04-18"
-          },
-          {
-            "name": "V1_0-20060606-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2006-06-06"
           },
           {
             "name": "V1_0-20060612-A",
