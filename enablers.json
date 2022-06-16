@@ -1742,12 +1742,6 @@
         ],
         "versions": [
           {
-            "name": "V1_1_2-20030612-A",
-            "status": "Approved",
-            "version": "V1.1.2",
-            "date": "2003-06-12"
-          },
-          {
             "name": "V1_1_2-20040711-A",
             "status": "Approved",
             "version": "V1.1.2",
@@ -1808,12 +1802,6 @@
           }
         ],
         "versions": [
-          {
-            "name": "V1_0-20051206-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2005-12-06"
-          },
           {
             "name": "V1_0-20051206-C",
             "status": "Candidate",
@@ -7812,18 +7800,6 @@
           }
         ],
         "versions": [
-          {
-            "name": "V1_0-20031021-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2003-10-21"
-          },
-          {
-            "name": "V1_0-20040907-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2004-09-07"
-          },
           {
             "name": "V1_0-20070313-C",
             "status": "Candidate",
