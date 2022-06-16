@@ -7807,18 +7807,6 @@
         ],
         "versions": [
           {
-            "name": "V1_0-20031021-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2003-10-21"
-          },
-          {
-            "name": "V1_0-20040907-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2004-09-07"
-          },
-          {
             "name": "V1_0-20070313-C",
             "status": "Candidate",
             "version": "V1.0",
