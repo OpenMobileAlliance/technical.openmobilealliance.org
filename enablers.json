@@ -1809,12 +1809,6 @@
         ],
         "versions": [
           {
-            "name": "V1_0-20051206-A",
-            "status": "Approved",
-            "version": "V1.0",
-            "date": "2005-12-06"
-          },
-          {
             "name": "V1_0-20051206-C",
             "status": "Candidate",
             "version": "V1.0",
