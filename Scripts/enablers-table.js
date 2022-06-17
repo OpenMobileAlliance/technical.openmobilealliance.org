@@ -82,13 +82,36 @@ const createTableHeader = function createTableHeader() {
   return thead;
 }
 
+const compareVersions = function compareVersions(verA, verB, level) {
+  if (typeof verA !== 'string' || typeof verB !== 'string') {
+    return false;
+  }
+  const v1 = verA.substring(1, verA.length).split('.').map(i => parseInt(i, 10))
+  const v2 = verB.substring(1, verA.length).split('.').map(i => parseInt(i, 10))
+
+  while (v1.length < v2.length)  { v1.push(0) }
+  while (v2.length < v1.length)  { v2.push(0) }
+
+  const len = (level === undefined || level < 1) ? v1.length : Math.min(v1.length, level)
+
+  for (let i = 0; i < len; i += 1) {
+    if (v1[i] > v2[i]) return 1
+    if (v2[i] > v1[i]) return -1
+  }
+
+  return 0
+}
+
 const isCandidateVersionApproved = function isCandidateVersionApproved(versions, versionStr) {
-  const sameVarsionApproved = versions.filter((item) => ['Approved', 'Historic'].includes(item.status) && item.version === versionStr);
+  const sameVarsionApproved = versions.filter((item) => ['Approved', 'Historic'].includes(item.status) &&
+    compareVersions(item.version, versionStr) === 0);
   return sameVarsionApproved.length > 0;
 }
 
 const filterLastCandicatePerVersion = function filterLastCandicatePerVersion(versions, versionStr) {
-  const sameVersionCandidate = versions.filter(item => ['Candidate'].includes(item.status) && item.version === versionStr);
+  const sameVersionCandidate = versions.filter(item => ['Candidate'].includes(item.status) &&
+    compareVersions(item.version, versionStr, 2) === 0);
+
   sameVersionCandidate.sort((a, b) => a.date > b.date);
   sameVersionCandidate.forEach((item, index) => {
     if (index === 0) {
@@ -111,11 +134,37 @@ const markInportantVersion = function markInportantVersion(item, index, items) {
   }
 };
 
+const removeRedundantItems = function removeRedundantItems(item, index, items) {
+  if (item.important) {
+    if (item.status === 'Candidate') {
+      // is this the highest candidate
+      const MajorItems = items.filter(element => (element.status === 'Candidate' &&
+        element.important && compareVersions(element.version, item.version) > 0))
+
+      if (MajorItems.length > 0) {
+        item.important = false
+      }
+    } else if (item.status === 'Approved') {
+      // is this the highest Approved version
+      const MajorItems = items.filter(element => (element.status === 'Approved' &&
+        element.important && compareVersions(element.version, item.version) > 0))
+
+      const sameHistoric = items.filter(element => (element.status === 'Historic' &&
+        element.important && compareVersions(element.version, item.version) === 0))
+
+      if (MajorItems.length > 0 || sameHistoric.length > 0) {
+        item.important = false
+      }
+    }
+  }
+};
+
 const prepareRowData = function prepareRowData(rowData) {
   // Select most resent Candidate version
   // that is not been Approved
   if (rowData && rowData.versions && rowData.versions.length > 0) {
    rowData.versions.forEach(markInportantVersion);
+   rowData.versions.forEach(removeRedundantItems);
   }
 }
 
