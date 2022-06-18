@@ -12079,6 +12079,11 @@
             "url": "README.txt"
           },
           {
+            "name": "README",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/sec_cf_overview.html"
+          },
+          {
             "name": "Search",
             "resourceType": "API",
             "url": "http://www.openmobilealliance.org/xxx/"
