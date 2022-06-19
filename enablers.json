@@ -6753,10 +6753,10 @@
         ],
         "versions": [
           {
-            "name": "V1.1-29949715-A",
+            "name": "V1_1-20040715-A",
             "status": "Approved",
-            "version": "",
-            "date": "2994-97-15"
+            "version": "V1.1",
+            "date": "2004-07-15"
           },
           {
             "name": "V1_1-20021104-C",
