@@ -301,6 +301,12 @@ const populateListOfReleasesCell = function populateListOfReleasesCell(row, conf
   return listOfreleases;
 }
 
+const isExternalUrl = function isExternalUrl(str) {
+  const urlRegEx = /^(https?):\/\/[^\s$.?#].[^\s*$]/gm
+
+  return urlRegEx.test(str)
+}
+
 const populateResourcesCell = function populateResourcesCell(row, config) {
   const resources = document.createElement('td');
   const div = document.createElement('div');
@@ -312,7 +318,11 @@ const populateResourcesCell = function populateResourcesCell(row, config) {
     let iconImg = ''
 
     if (resourceType === 'Overview') {
-      url = `${config.ftp}${row.abbreviation}/${resource.url}`
+      if (isExternalUrl(row.url)) {
+        url = `${resource.url}`
+      } else {
+        url = `${config.ftp}${row.abbreviation}/${resource.url}`
+      }
       iconImg = 'fas fa-book'
     } else if (resourceType === 'API') {
       url = resource.url
