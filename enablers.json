@@ -253,6 +253,11 @@
             "url": "README.txt"
           },
           {
+            "name": "Overview",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/autho4api_overview.html"
+          },
+          {
             "name": "Submit",
             "resourceType": "Issue",
             "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
@@ -11174,7 +11179,7 @@
             "url": "README.txt"
           },
           {
-            "name": "README",
+            "name": "Overview",
             "resourceType": "Overview",
             "url": "https://technical.openmobilealliance.org/Overviews/sec_cf_overview.html"
           },
