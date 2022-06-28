@@ -9282,6 +9282,11 @@
             "url": "README.txt"
           },
           {
+            "name": "Overview",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/presencesimple_overview.html"
+          },
+          {
             "name": "Bugs",
             "resourceType": "Issue",
             "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
