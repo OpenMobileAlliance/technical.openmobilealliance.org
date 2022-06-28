@@ -5295,6 +5295,11 @@
             "url": "Lightweight_Machine_to_Machine-v1_1-OMASpecworks.pdf"
           },
           {
+            "name": "Overview",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/lightweightm2m_overview.html"
+          },
+          {
             "name": "Bugs",
             "resourceType": "Issue",
             "url": "https://github.com/OpenMobileAlliance/OMA_LwM2M_for_Developers/issues"
