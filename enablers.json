@@ -12799,10 +12799,10 @@
         ],
         "versions": [
           {
-            "name": "XXXX",
-            "status": "Approved",
-            "version": "XXXX",
-            "date": ""
+            "name": "V1_0-20040615-C",
+            "status": "Candidate",
+            "version": "V1.0",
+            "date": "2004-06-15"
           }
         ]
       }
