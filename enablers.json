@@ -253,6 +253,11 @@
             "url": "README.txt"
           },
           {
+            "name": "Overview",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/autho4api_overview.html"
+          },
+          {
             "name": "Submit",
             "resourceType": "Issue",
             "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
@@ -589,6 +594,11 @@
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
+          },
+          {
+            "name": "Overview",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/browsing_overview.html"
           },
           {
             "name": "Bugs",
@@ -1936,6 +1946,11 @@
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
+          },
+          {
+            "name": "Overview",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/dm_overview.html"
           },
           {
             "name": "Bugs",
@@ -3565,6 +3580,11 @@
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
+          },
+          {
+            "name": "Overview",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/gotapi_overview.html"
           },
           {
             "name": "Bugs",
@@ -5273,6 +5293,11 @@
             "name": "Presentation",
             "resourceType": "Overview",
             "url": "Lightweight_Machine_to_Machine-v1_1-OMASpecworks.pdf"
+          },
+          {
+            "name": "Overview",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/lightweightm2m_overview.html"
           },
           {
             "name": "Bugs",
@@ -9257,6 +9282,11 @@
             "url": "README.txt"
           },
           {
+            "name": "Overview",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/presencesimple_overview.html"
+          },
+          {
             "name": "Bugs",
             "resourceType": "Issue",
             "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
@@ -11172,6 +11202,11 @@
             "name": "README",
             "resourceType": "Overview",
             "url": "README.txt"
+          },
+          {
+            "name": "Overview",
+            "resourceType": "Overview",
+            "url": "https://technical.openmobilealliance.org/Overviews/sec_cf_overview.html"
           },
           {
             "name": "Bugs",
