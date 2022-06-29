@@ -318,7 +318,7 @@ const populateResourcesCell = function populateResourcesCell(row, config) {
     let iconImg = ''
 
     if (resourceType === 'Overview') {
-      if (isExternalUrl(row.url)) {
+      if (isExternalUrl(resource.url)) {
         url = `${resource.url}`
       } else {
         url = `${config.ftp}${row.abbreviation}/${resource.url}`
