@@ -8118,6 +8118,12 @@
             "status": "Approved",
             "version": "V1.1",
             "date": "2020-11-10"
+          },
+          {
+            "name": "V2_0-20211123-A",
+            "status": "Approved",
+            "version": "V2_0",
+            "date": "2021-11-23"
           }
         ]
       }
