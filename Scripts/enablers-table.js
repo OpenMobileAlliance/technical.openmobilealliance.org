@@ -104,7 +104,7 @@ const compareVersions = function compareVersions(verA, verB, level) {
 
 const isCandidateVersionApproved = function isCandidateVersionApproved(versions, versionStr) {
   const sameVarsionApproved = versions.filter((item) => ['Approved', 'Historic'].includes(item.status) &&
-    compareVersions(item.version, versionStr) === 0);
+    compareVersions(item.version, versionStr, 2) === 0);
   return sameVarsionApproved.length > 0;
 }
 
