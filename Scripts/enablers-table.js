@@ -147,7 +147,7 @@ const removeRedundantItems = function removeRedundantItems(item, index, items) {
     } else if (item.status === 'Approved') {
       // is this the highest Approved version
       const MajorItems = items.filter(element => (element.status === 'Approved' &&
-        element.important && compareVersions(element.version, item.version) > 0) && element !== item)
+        element.important && compareVersions(element.version, item.version, 2) === 0) && element !== item)
 
       const sameHistoric = items.filter(element => (element.status === 'Historic' &&
         element.important && compareVersions(element.version, item.version) === 0))
