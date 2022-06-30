@@ -297,9 +297,18 @@ header > nav .feedback-item {
 .link-historic-version {
   color: #7C7C7C;
 }
+.link-historic-version-latest {
+  color: #dd9d9d;
+}
 
 .link-approved-version {
 }
+.link-approved-version-latest {
+  color: #a52a2a;
+}
 
 .link-candidate-version {
+}
+.link-candidate-version-latest {
+  color: #a52a2a;
 }

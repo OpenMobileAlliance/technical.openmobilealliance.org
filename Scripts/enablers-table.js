@@ -159,12 +159,24 @@ const removeRedundantItems = function removeRedundantItems(item, index, items) {
   }
 };
 
+const markLatesQuarterVersion = function markLatesQuarterVersion(items, date) {
+  items.forEach(item => {
+    const itemDate = new Date(item.date)
+    if ((itemDate.setDate(itemDate.getDate() + 90) >= date) )  {
+      item.highlight = true
+    } else {
+      item.highlight = false
+    }
+  })
+}
+
 const prepareRowData = function prepareRowData(rowData) {
   // Select most resent Candidate version
   // that is not been Approved
   if (rowData && rowData.versions && rowData.versions.length > 0) {
-   rowData.versions.forEach(markInportantVersion);
-   rowData.versions.forEach(removeRedundantItems);
+    rowData.versions.forEach(markInportantVersion);
+    rowData.versions.forEach(removeRedundantItems);
+    markLatesQuarterVersion(rowData.versions, new Date());
   }
 }
 
@@ -388,7 +400,12 @@ const populateCandidateCell = function populateCandidateCell(row, config) {
 
       link.setAttribute('href', `${config.ftp}${row.abbreviation}/${item.name}`);
       link.setAttribute('target', 'blank');
-      link.setAttribute('class', item.status === 'Historic' ? 'link-historic-version': 'link-candidate-version');
+
+      if (item.highlight) {
+        link.setAttribute('class', item.status === 'Historic' ? 'link-historic-version-latest': 'link-candidate-version-latest');
+      } else {
+        link.setAttribute('class', item.status === 'Historic' ? 'link-historic-version': 'link-candidate-version');
+      }
 
       if (item.date) {
         const dateStr = (new Date(item.date)).toLocaleDateString('en-US', {month: 'long', year: 'numeric'})
@@ -419,7 +436,12 @@ const populateReleaseCell =function populateReleaseCell(row, config) {
 
       link.setAttribute('href', `${config.ftp}${row.abbreviation}/${item.name}`);
       link.setAttribute('target', 'blank');
-      link.setAttribute('class', item.status === 'Historic' ? 'link-historic-version': 'link-approved-version');
+
+      if (item.highlight) {
+        link.setAttribute('class', item.status === 'Historic' ? 'link-historic-version-latest': 'link-approved-version-latest');
+      } else {
+        link.setAttribute('class', item.status === 'Historic' ? 'link-historic-version': 'link-approved-version');
+      }
 
       if (item.date) {
         const dateStr = (new Date(item.date)).toLocaleDateString('en-US', {month: 'long', year: 'numeric'});
