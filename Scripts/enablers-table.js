@@ -377,10 +377,22 @@ const populateResourcesCell = function populateResourcesCell(row, config) {
   return resources;
 }
 
+const shouldBeDisplayed = function shouldBeDisplayed(version) {
+  let res = false
+  if (version) {
+    if (typeof version.display === 'undefined') {
+      res = version.important
+    } else {
+      res = version.display
+    }
+  }
+  return res
+}
+
 const selectVersionsByStatus = function selectVersionsByStatus(versions, statuses) {
     const result = [];
     versions.forEach((version) => {
-      if (statuses.includes(version.status) && version.important) {
+      if (statuses.includes(version.status) && shouldBeDisplayed(version)) {
         result.push(version);
       }
     });
