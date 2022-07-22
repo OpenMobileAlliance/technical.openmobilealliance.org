@@ -1125,7 +1125,8 @@
             "name": "V2_1-20160209-C",
             "status": "Candidate",
             "version": "V2.1",
-            "date": "2016-02-09"
+            "date": "2016-02-09",
+            "display": "true"
           },
           {
             "name": "V2_2-20170926-C",
