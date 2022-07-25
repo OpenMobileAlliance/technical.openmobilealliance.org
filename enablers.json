@@ -1126,7 +1126,7 @@
             "status": "Candidate",
             "version": "V2.1",
             "date": "2016-02-09",
-            "display": "true"
+            "display": true
           },
           {
             "name": "V2_2-20170926-C",
@@ -4898,7 +4898,8 @@
             "name": "V1_0-20160714-C",
             "status": "Candidate",
             "version": "V1.0",
-            "date": "2016-07-14"
+            "date": "2016-07-14",
+            "display": true
           },
           {
             "name": "V1_1-20120612-C",
@@ -4928,7 +4929,8 @@
             "name": "V1_1-20200804-C",
             "status": "Candidate",
             "version": "V1.1",
-            "date": "2020-08-04"
+            "date": "2020-08-04",
+            "display": true
           },
           {
             "name": "V2_0-20130521-C",
@@ -10022,7 +10024,8 @@
             "name": "V1_0-20131224-A",
             "status": "Approved",
             "version": "V1.0",
-            "date": "2013-12-24"
+            "date": "2013-12-24",
+            "display": false
           },
           {
             "name": "V1_0-20141203-C",
@@ -10034,7 +10037,8 @@
             "name": "V1_0-20151201-C",
             "status": "Candidate",
             "version": "V1.0",
-            "date": "2015-12-01"
+            "date": "2015-12-01",
+            "display": true
           }
         ]
       }
@@ -10288,13 +10292,15 @@
             "name": "V1_0-20131224-A",
             "status": "Approved",
             "version": "V1.0",
-            "date": "2013-12-24"
+            "date": "2013-12-24",
+            "display": false
           },
           {
             "name": "V1_0-20151103-C",
             "status": "Candidate",
             "version": "V1.0",
-            "date": "2015-11-03"
+            "date": "2015-11-03",
+            "display": true
           }
         ]
       }
@@ -11814,7 +11820,8 @@
             "name": "V2_1-20181213-C",
             "status": "Candidate",
             "version": "V2.1",
-            "date": "2018-12-13"
+            "date": "2018-12-13",
+            "display": true
           },
           {
             "name": "V3_0-20100126-C",
