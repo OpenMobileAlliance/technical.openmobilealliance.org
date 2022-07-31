@@ -108,18 +108,35 @@ const isCandidateVersionApproved = function isCandidateVersionApproved(versions,
   return sameVarsionApproved.length > 0;
 }
 
+const getMaxDate = function getMaxDate(list) {
+  let res = null
+
+  if (list && list.length > 0) {
+    res = list[0].date
+    for (let i = 1, len = list.length; i < len; i += 1) {
+     if (res < list[i].date) {
+       res = list[i].date
+     }
+    }
+  }
+
+  return res
+}
+
 const filterLastCandicatePerVersion = function filterLastCandicatePerVersion(versions, versionStr) {
   const sameVersionCandidate = versions.filter(item => ['Candidate'].includes(item.status) &&
     compareVersions(item.version, versionStr, 2) === 0);
 
-  sameVersionCandidate.sort((a, b) => a.date > b.date);
+  const maxDate = getMaxDate(sameVersionCandidate);
+
   sameVersionCandidate.forEach((item, index) => {
-    if (index === 0) {
+    if (item.date === maxDate) {
       item.important = true;
     } else {
       item.important = false;
     }
   });
+
 }
 
 const markInportantVersion = function markInportantVersion(item, index, items) {
