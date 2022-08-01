@@ -9525,7 +9525,8 @@
             "name": "V1_0-20050125-C",
             "status": "Candidate",
             "version": "V1.0",
-            "date": "2005-01-25"
+            "date": "2005-01-25",
+            "display": false
           },
           {
             "name": "V2_1-20051122-C",
