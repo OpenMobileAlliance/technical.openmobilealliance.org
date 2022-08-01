@@ -9370,7 +9370,8 @@
             "name": "V1_0-20060725-A",
             "status": "Approved",
             "version": "V1.0",
-            "date": "2006-07-25"
+            "date": "2006-07-25",
+            "display": false
           },
           {
             "name": "V1_0_1-20061128-H",
