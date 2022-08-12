@@ -20,7 +20,11 @@ const applayDynamicTable = (data) => {
         { orderable: false },
         { orderable: false },
         { orderable: false }
-      ]
+      ],
+      columnDefs: [{
+        target: -1,
+        className: 'dt-body-center'
+      }]
     });
   });
   return data;
@@ -48,14 +52,17 @@ const generateTable = function generateTable(data) {
     const table = document.createElement('table');
     table.setAttribute('class', 'enablers-data');
     table.setAttribute('id', 'table-of-enablers');
+    table.setAttribute('style', 'width: 100%');
+
     table.appendChild(createTableHeader());
+
     const tbody = document.createElement('tbody');
     const config = {};
     config.url = data.organization.url;
     config.ftp = data.organization.ftp;
 
-    data.enablers.forEach((enabler) => {
-      tbody.appendChild(createEnablerRow(enabler, config));
+    data.enablers.forEach((enabler, index) => {
+      tbody.appendChild(createEnablerRow(enabler, index, config));
     });
 
     table.appendChild(tbody);
@@ -68,7 +75,7 @@ const generateTable = function generateTable(data) {
 }
 
 const createTableHeader = function createTableHeader() {
-  const ENABLRS_TABLE_HEADER_ITEMS = ['List of Releases - Directory Names', 'Resources', 'OMA Status - Candidate', 'OMA Status - Release'];
+  const ENABLRS_TABLE_HEADER_ITEMS = ['List of Releases - Directory Names', 'Resources', 'OMA Status - Candidate', 'OMA Status - Release', ''];
   const thead = document.createElement('thead');
   const tr = document.createElement('tr');
 
@@ -197,7 +204,7 @@ const prepareRowData = function prepareRowData(rowData) {
   }
 }
 
-const createEnablerRow = function createEnablerRow(row, config) {
+const createEnablerRow = function createEnablerRow(row, index, config) {
   const tr = document.createElement('tr');
   const info = Object.create(config);
 
@@ -207,8 +214,24 @@ const createEnablerRow = function createEnablerRow(row, config) {
     tr.appendChild(populateResourcesCell(row, info));
     tr.appendChild(populateCandidateCell(row, info));
     tr.appendChild(populateReleaseCell(row, info));
+    tr.appendChild(populateActionCell(row, index, info));
   }
   return tr;
+}
+
+const populateActionCell = function populateActionCell(row, index, info) {
+  const div = document.createElement('div');
+  div.setAttribute('class', 'row-action');
+
+  const span = document.createElement('span');
+  span.setAttribute('id', `row-${index}`);
+  span.setAttribute('class', 'glyphicon glyphicon-eye-close');
+  span.setAttribute('aria-hidden', 'true');
+  span.addEventListener('click', showVersionsToggle);
+
+  div.appendChild(span);
+
+  return div;
 }
 
 const createEnablerInfoTitle = (item, config) => {
@@ -276,7 +299,7 @@ const createEnablerInfoMetaList = (item, config) => {
 
       list.appendChild(listItem);
     }
-  })
+  });
 
   div.appendChild(list);
 
@@ -398,7 +421,7 @@ const shouldBeDisplayed = function shouldBeDisplayed(version) {
   let res = false
   if (version) {
     if (typeof version.display === 'undefined') {
-      res = version.important
+      res = true
     } else {
       res = version.display
     }
@@ -423,7 +446,8 @@ const populateCandidateCell = function populateCandidateCell(row, config) {
 
     candidateSet.reverse().forEach((item) => {
       const spanVersion = document.createElement('span');
-      spanVersion.setAttribute('class', 'enabler-version');
+      const enablesStyle = item.important ? 'enabler-version' : 'enabler-version-not-important hidden';
+      spanVersion.setAttribute('class', enablesStyle);
       const link = document.createElement('a');
       const linkText = item.status === 'Historic' ? `${item.version} Historic` : item.version;
 
@@ -442,9 +466,9 @@ const populateCandidateCell = function populateCandidateCell(row, config) {
       }
       link.appendChild(document.createTextNode(`${linkText}`));
       spanVersion.appendChild(link);
+      spanVersion.appendChild(document.createElement('br'));
 
       omaCandidateStatus.appendChild(spanVersion);
-      omaCandidateStatus.appendChild(document.createElement('br'));
       omaCandidateStatus.setAttribute('class', 'candidate-td');
     })
 
@@ -452,14 +476,15 @@ const populateCandidateCell = function populateCandidateCell(row, config) {
   return omaCandidateStatus;
 }
 
-const populateReleaseCell =function populateReleaseCell(row, config) {
+const populateReleaseCell = function populateReleaseCell(row, config) {
   const omaReleaseStatus = document.createElement('td');
   if (row && row.data && row.data.versions && row.data.versions.length > 0) {
     const releaseSet = selectVersionsByStatus(row.data.versions, ['Approved', 'Historic']);
 
     releaseSet.reverse().forEach((item) => {
       const spanVersion = document.createElement('span');
-      spanVersion.setAttribute('class', 'enabler-version');
+      const enablesStyle = item.important ? 'enabler-version' : 'enabler-version-not-important hidden';
+      spanVersion.setAttribute('class', enablesStyle);
       const link = document.createElement('a');
       const linkText = item.status === 'Historic' ? `${item.version} Historic` : item.version;
 
@@ -478,13 +503,28 @@ const populateReleaseCell =function populateReleaseCell(row, config) {
       }
       link.appendChild(document.createTextNode(`${linkText}`));
       spanVersion.appendChild(link);
+      spanVersion.appendChild(document.createElement('br'));
 
       omaReleaseStatus.appendChild(spanVersion);
-      omaReleaseStatus.appendChild(document.createElement('br'));
       omaReleaseStatus.setAttribute('class', 'approved-td');
     })
   }
   return omaReleaseStatus;
+}
+
+const showVersionsToggle = function showVersionsToggle(e) {
+  const element = $(e.target);
+  const row = element.closest('tr');
+
+  row.find('.enabler-version-not-important').toggleClass('hidden');
+
+  if (element.hasClass('glyphicon glyphicon-eye-open')) {
+    element.removeClass('glyphicon glyphicon-eye-open');
+    element.addClass('glyphicon glyphicon-eye-close');
+  } else {
+    element.removeClass('glyphicon glyphicon-eye-close');
+    element.addClass('glyphicon glyphicon-eye-open');
+  }
 }
 
 $(document).ready(createAndPopulateEnablersTable());

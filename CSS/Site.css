@@ -312,3 +312,21 @@ header > nav .feedback-item {
 .link-candidate-version-latest {
   color: #a52a2a;
 }
+
+.row-action > span{
+  display: none;
+}
+
+tr:hover .row-action span {
+  display: block;
+  cursor: pointer;
+}
+
+.enabler-version a {
+  font-weight: 600;
+}
+
+.enabler-version-not-important a {
+  color: #5A5A5A;
+  font-weight: 300;
+}
