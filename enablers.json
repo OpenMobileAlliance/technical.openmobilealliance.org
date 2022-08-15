@@ -5706,6 +5706,11 @@
             "url": "README.txt"
           },
           {
+            "name": "README",
+            "resourceType": "Overview",
+            "url": "https://www.openmobilealliance.org/documents/guidelines/OMA-Guidelines-LwM2M_VirtualObserveNotify-V1_1-20211130-A.pdf"
+          },
+          {
             "name": "Bugs",
             "resourceType": "Issue",
             "url": "mailto:helpdesk@omaorg.org?subject=Feedback"
