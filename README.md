@@ -38,41 +38,41 @@ Merge master to gh-pages and push. Or do a pull request to gh-pages from master.
 The `enablers.json` file contains three main objects:
 
 * `id`
-    * The schema
+    * The schema.
 
-* `organization` 
+* `organization`: Open Mobile Alliance
     * `abbreviation`: OMA
     * `schemaVersion`: 1.0
     * `url`: 
-        * Points to the technical pages of the Open Mobile Alliance website
+        * this ulr points to the technical pages of the Open Mobile Alliance website
     * `ftp`
         * https://www.openmobilealliance.org/release/
-        * It is the prefix to preceed on all `url` properties listed in the `enabler.json` file
+        * this value it is used as a prefix to preceed on all `url` properties listed in the `enabler.json` file
     * `about`
-        * This document contains a reference to all the Enabler Releases published by OMA over the years.
+        * this document contains a reference to all the Enabler Releases published by OMA over the years.
     * `email`
-        * OMA contact email, info@omaorg.org
+        * OMA contact email, helpdesk@omaorg.org
 
 * `enablers`
     * `name`: full name of the Enabler
-    * `logo`: logo (if exist)
-    * `abbreviation`: Enabler abbreviation
-    * `data`:  # contains three objects
-        * `resources` # it is an array that contains resources
+    * `logo`: logo of the Enabler (if exist)
+    * `abbreviation`: Enabler abbreviation, e.g., DM
+    * `data`:  # contains three objects (`name`, `resourceType` and `url`)
+        * `resources` # it is an array that contains resources associated to each Enabler.
             * `name`: name of the resource
             * `resourceType`: type of resource (Overview, Issues, EVP, ETS, Tool, Registry, Dependency)
-                * The `Overview` type of resource accepts global url.
-            * `url`: at the time of display the content of this `url` is prefixed with the value of the property `ftp` previously defined.
+                * The `Overview` resource type accepts global url on its property `url`.
+            * `url`: at the time of displaying, the value in the property is appended with the value of the `ftp`  property previously defined.
         * `publications`
-            * `url`: as above the value of this property is prefix with the value of the `ftp` at the time of display
+            * `url`: as above the value of this property is prefix with the value of the `ftp` at the time of displaying
             * `file`: file name
             * `status`: status of the document, (D: Draft, C: Candidate, A: Approved, H: Historic)
             * `version`: version VX.Y.Z
-            * `date`: date when the document was approved, in the format YYYY-MM-DD
+            * `date`: date when the document was approved. It is displayed in the format YYYY-MM-DD
             * `contentMediaType`: property to identify the type of file, e.g. text/plain
-        * `versions`: this object is an array that represents the versions associated to each relase.
-            * `name`: name of the ftp folder that contains the Release. The format is: V_X_Y_Z-YYYYMMDD-Staus
+        * `versions`: this object is an array that represents the versions associated to each Relase.
+            * `name`: name of the ftp folder that contains the Release. The format for this name is: V_X_Y_Z-YYYYMMDD-Status
             * `status`: status of the document, (D: Draft, C: Candidate, A: Approved, H: Historic)
             * `version`: version VX.Y.Z
             * `date`: date when the Release was approved, in the format: YYYY-MM-DD
-            * `display`: this property allows override any display critieria. If the value is set to `true`, then the Release version details will be published independent of the display criteria. If the value is set to `false`, then the Release version won't be displayed independent of the display criteria. If it is set to `false` the information will be displayed when displaying ALL the versions for that Enabler.
+            * `display`: this property allows override any display critieria. If the value is set to `true`, then the Release version details will be displayed independent of the rendering criteria. If the value is set to `false`, then the Release version won't be displayed independent of the rendering criteria. If it is set to `false` the information for that Release will be displayed when displaying ALL the versions for that Enabler.
