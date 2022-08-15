@@ -32,3 +32,47 @@ When you're happy the new code is working. Either push to Github and do a pull r
 
 ### Publish code
 Merge master to gh-pages and push. Or do a pull request to gh-pages from master.
+
+## How to Maintain enablers.json File
+
+The `enablers.json` file contains three main objects:
+
+* `id`
+    * The schema
+
+* `organization` 
+    * `abbreviation`: OMA
+    * `schemaVersion`: 1.0
+    * `url`: 
+        * Points to the technical pages of the Open Mobile Alliance website
+    * `ftp`
+        * https://www.openmobilealliance.org/release/
+        * It is the prefix to preceed on all `url` properties listed in the `enabler.json` file
+    * `about`
+        * This document contains a reference to all the Enabler Releases published by OMA over the years.
+    * `email`
+        * OMA contact email, info@omaorg.org
+
+* `enablers`
+    * `name`: full name of the Enabler
+    * `logo`: logo (if exist)
+    * `abbreviation`: Enabler abbreviation
+    * `data`:  # contains three objects
+        * `resources` # it is an array that contains resources
+            * `name`: name of the resource
+            * `resourceType`: type of resource (Overview, Issues, EVP, ETS, Tool, Registry, Dependency)
+                * The `Overview` type of resource accepts global url.
+            * `url`: at the time of display the content of this `url` is prefixed with the value of the property `ftp` previously defined.
+        * `publications`
+            * `url`: as above the value of this property is prefix with the value of the `ftp` at the time of display
+            * `file`: file name
+            * `status`: status of the document, (D: Draft, C: Candidate, A: Approved, H: Historic)
+            * `version`: version VX.Y.Z
+            * `date`: date when the document was approved, in the format YYYY-MM-DD
+            * `contentMediaType`: property to identify the type of file, e.g. text/plain
+        * `versions`: this object is an array that represents the versions associated to each relase.
+            * `name`: name of the ftp folder that contains the Release. The format is: V_X_Y_Z-YYYYMMDD-Staus
+            * `status`: status of the document, (D: Draft, C: Candidate, A: Approved, H: Historic)
+            * `version`: version VX.Y.Z
+            * `date`: date when the Release was approved, in the format: YYYY-MM-DD
+            * `display`: this property allows override any display critieria. If the value is set to `true`, then the Release version details will be published independent of the display criteria. If the value is set to `false`, then the Release version won't be displayed independent of the display criteria. If it is set to `false` the information will be displayed when displaying ALL the versions for that Enabler.
