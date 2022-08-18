@@ -136,7 +136,7 @@ const filterLastCandicatePerVersion = function filterLastCandicatePerVersion(ver
 
   const maxDate = getMaxDate(sameVersionCandidate);
 
-  sameVersionCandidate.forEach((item, index) => {
+  sameVersionCandidate.forEach((item) => {
     if (item.date === maxDate) {
       item.important = true;
     } else {
@@ -146,7 +146,7 @@ const filterLastCandicatePerVersion = function filterLastCandicatePerVersion(ver
 
 }
 
-const markInportantVersion = function markInportantVersion(item, index, items) {
+const markInportantVersion = function markInportantVersion(item, _, items) {
   item.important = true;
   if (item.status === 'Candidate') {
     // check if there is Approved or Historic version based on this one
@@ -158,7 +158,7 @@ const markInportantVersion = function markInportantVersion(item, index, items) {
   }
 };
 
-const removeRedundantItems = function removeRedundantItems(item, index, items) {
+const removeRedundantItems = function removeRedundantItems(item, _, items) {
   if (item.important) {
     if (item.status === 'Candidate') {
       // is this the highest candidate
@@ -214,12 +214,12 @@ const createEnablerRow = function createEnablerRow(row, index, config) {
     tr.appendChild(populateResourcesCell(row, info));
     tr.appendChild(populateCandidateCell(row, info));
     tr.appendChild(populateReleaseCell(row, info));
-    tr.appendChild(populateActionCell(row, index, info));
+    tr.appendChild(populateActionCell(index));
   }
   return tr;
 }
 
-const populateActionCell = function populateActionCell(row, index, info) {
+const populateActionCell = function populateActionCell(index) {
   const div = document.createElement('div');
   div.setAttribute('class', 'row-action');
 
@@ -417,26 +417,25 @@ const populateResourcesCell = function populateResourcesCell(row, config) {
   return resources;
 }
 
-const shouldBeDisplayed = function shouldBeDisplayed(version) {
-  let res = false
-  if (version) {
-    if (typeof version.display === 'undefined') {
-      res = true
-    } else {
-      res = version.display
-    }
-  }
-  return res
-}
-
 const selectVersionsByStatus = function selectVersionsByStatus(versions, statuses) {
     const result = [];
     versions.forEach((version) => {
-      if (statuses.includes(version.status) && shouldBeDisplayed(version)) {
+      if (statuses.includes(version.status)) {
         result.push(version);
       }
     });
   return result
+}
+
+const getEnablerVersionStyle = function getEnablerVersionStyle(item) {
+  let enablesStyle = ''
+
+  if (typeof item.display === 'undefined') {
+    enablesStyle = item.important ? 'enabler-version' : 'enabler-version-not-important hidden';
+  } else {
+    enablesStyle = item.display ? 'enabler-version' : 'enabler-version-not-important hidden';
+  }
+  return enablesStyle
 }
 
 const populateCandidateCell = function populateCandidateCell(row, config) {
@@ -446,7 +445,8 @@ const populateCandidateCell = function populateCandidateCell(row, config) {
 
     candidateSet.reverse().forEach((item) => {
       const spanVersion = document.createElement('span');
-      const enablesStyle = item.important ? 'enabler-version' : 'enabler-version-not-important hidden';
+      const enablesStyle = getEnablerVersionStyle(item)
+
       spanVersion.setAttribute('class', enablesStyle);
       const link = document.createElement('a');
       const linkText = item.status === 'Historic' ? `${item.version} Historic` : item.version;
@@ -483,7 +483,7 @@ const populateReleaseCell = function populateReleaseCell(row, config) {
 
     releaseSet.reverse().forEach((item) => {
       const spanVersion = document.createElement('span');
-      const enablesStyle = item.important ? 'enabler-version' : 'enabler-version-not-important hidden';
+      const enablesStyle = getEnablerVersionStyle(item)
       spanVersion.setAttribute('class', enablesStyle);
       const link = document.createElement('a');
       const linkText = item.status === 'Historic' ? `${item.version} Historic` : item.version;
