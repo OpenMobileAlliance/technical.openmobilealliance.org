@@ -222,3 +222,111 @@ header > nav .feedback-item {
   box-shadow: 0 0 0px #ffa32d;
   background: #f5e3e2;
 }
+
+#enablers-table {
+  padding-bottom: 5rem;
+  margin-bottom: 5rem;
+}
+
+.enablers-data th:first-child {
+  width: 50%;
+}
+
+.enablers-data th:nth-child(2) {
+  width: 20%;
+  text-align: center;
+}
+
+.enablers-data td {
+  vertical-align: text-top;
+}
+
+.resource-link {
+  padding-right: 8px;
+}
+
+.enabler-resources {
+  text-align: center;
+}
+
+.enabler-info {
+
+}
+.enabler-info-meta {
+}
+.enabler-info-meta-list-card {
+}
+.linked-resource-link{}
+.enabler-info-meta-list li {
+  border: none;
+}
+.list-group {
+  border: none;
+}
+.enabler-info-meta-logo {
+}
+.enabler-info-meta-list-title {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.enabler-abbreviation {
+  font-weight: bold;
+}
+.enabler-url {
+}
+
+.dataTables_filter {
+  width: 75%;
+}
+.dataTables_filter label {
+  width: 100%;
+}
+.dataTables_filter label input {
+  width: 80%;
+}
+
+.approved-td {
+  text-align: center;
+}
+
+.candidate-td {
+  text-align: center;
+}
+
+.link-historic-version {
+  color: #7C7C7C;
+}
+.link-historic-version-latest {
+  color: #dd9d9d;
+}
+
+.link-approved-version {
+}
+.link-approved-version-latest {
+  color: #a52a2a;
+}
+
+.link-candidate-version {
+}
+.link-candidate-version-latest {
+  color: #a52a2a;
+}
+
+.row-action > span{
+  display: none;
+}
+
+tr:hover .row-action span {
+  display: block;
+  cursor: pointer;
+}
+
+.enabler-version a {
+  font-weight: 600;
+}
+
+.enabler-version-not-important a {
+  color: #5A5A5A;
+  font-weight: 300;
+}
