@@ -4899,6 +4899,12 @@
             "status": "Candidate",
             "version": "V1.0",
             "date": "2016-07-14",
+          },
+          {
+            "name": "V1_0-20220916-C",
+            "status": "Candidate",
+            "version": "V1.0",
+            "date": "2022-09-16",
             "display": true
           },
           {
@@ -8336,6 +8342,12 @@
             "status": "Approved",
             "version": "V1.1",
             "date": "2020-11-10"
+          },
+          {
+            "name": "V1_1_1-20221003-A",
+            "status": "Approved",
+            "version": "V1.1.1",
+            "date": "2022-10-03"
           }
         ]
       }
