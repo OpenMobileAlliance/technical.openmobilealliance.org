@@ -5517,6 +5517,12 @@
             "status": "Approved",
             "version": "V1.2",
             "date": "2020-11-10"
+          },
+          {
+            "name": "V1_2_1-20221209-A",
+            "status": "Approved",
+            "version": "V1.2.1",
+            "date": "2022-12-09"
           }
         ]
       }
@@ -7760,6 +7766,12 @@
             "status": "Approved",
             "version": "V1.3",
             "date": "2020-11-10"
+          },
+          {
+            "name": "V1_3_1-20221209-A",
+            "status": "Approved",
+            "version": "V1.3.1",
+            "date": "2022-12-09"
           }
         ]
       }
