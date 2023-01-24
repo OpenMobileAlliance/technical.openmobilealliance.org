@@ -278,6 +278,14 @@
                     <li>LwM2M Registry API: <a target="_blank" href="https://wiki.openmobilealliance.org/display/TOOL/Registry+API">LwM2M Registry API</a></li>
                 </ul>
             </p>
+            <p>The official publication of OMA LwM2M Objects and Resources is this page. However, the registration process is done via GitHub at: <a title="GitHub repository" href="https://github.com/OpenMobileAlliance/lwm2m-registry" target="_blank">lwm2m-registry</a>. IPSO Working Group, will review your registration. You can interact with this group via <a title="GitHub Issues" href="https://github.com/OpenMobileAlliance/lwm2m-registry/issues" target="_blank"> lwm2m-registry Issues</a>. </p>
+            <p>The Vorto Project is an Eclipse Foundation open source initiative that aims to help compile and manage abstract device descriptions (information models). The scope includes:</p>
+                <ul>
+                    <li>Vorto Repository - an open platform where information models are shared</li>
+                    <li>Vorto Domain Specific Language and editor - used to describe information models</li>
+                    <li>SDK - helps reduce development time</li>
+                </ul>
+            <p><a target="_blank" href="https://vorto.eclipse.org/#/?s=com.ipso.smartobjects">OMA SpecWorks IPSO Vorto models</a></p>
         </div>
         <div>
             <h2>
@@ -287,7 +295,6 @@
                 <thead>
                     <tr>
                         <th>Category</th>
-                        <th>Label</th>
                         <th>URN </th>
                         <th>Object ID range</th>
                         <th>Description</th>
@@ -296,9 +303,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>OMA</td>
                         <td>
-                            <p>oma</p>
+                            <p>oma-label</p>
                         </td>
                         <td>
                             <p><code>urn:oma:lwm2m:oma:&lt;id&gt;:&lt;version&gt;</code></p>
@@ -319,11 +325,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Reserved</td>
                         <td>
                             <p>reserved</p>
                         </td>
-                        <td>n/a</td>
+                        <td></td>
                         <td>
                             1024 - 2047
                         </td>
@@ -338,9 +343,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>SDO</td>
                         <td>
-                            <p>ext</p>
+                            <p>ext-label</p>
                         </td>
                         <td>
                             <p><code>urn:oma:lwm2m:ext:&lt;id&gt;:&lt;version&gt;</code></p>
@@ -359,81 +363,33 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Vendors</td>
                         <td>
-                            <p>x</p>
+                            <p>x-label</p>
                         </td>
                         <td>
                             <p><code>urn:oma:lwm2m:x:&lt;id&gt;:&lt;version&gt;</code></p>
                         </td>
                         <td>
-                            10241 - 32768
-                        </td>
-                        <td>
-                            Objects registered by companies or individuals.
-                        </td>
-                        <td>
-                            <a title="click here to view Objects registered by companies and individuals" href="#x_label">View</a>
-                        </td>
-                        <td>
-                            <a title="click here to register an Object if you are vendors or individuals" href="http://devtoolkit.openmobilealliance.org/OEditor/Register">Register</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Company Reserved</td>
-                        <td>
-                            <p>x</p>
-                        </td>
-                        <td>
-                            <p>n/a</p>
-                        </td>
-                        <td>
+                            10241 - 26240<br/>
+                            26241 - 32768<br/>
                             32769 - 42768
                         </td>
                         <td>
-                            Company bulk reservation of up to 50 Object IDs. This range is to create private LwM2M Objects that are not published on the OMNA Lightweight Object registry.
+                            Objects registered by companies or individuals.<br/>
+                            Objects Produced by Vendors to re-use<br/>
+                            Block of objects reserved by vendors (Max 50). Private range, Objects will not be published
                         </td>
                         <td>
+                            <a title="click here to view Objects registered by companies and individuals" href="#x_label">View</a><br />
+                            --<br />
                             <a title="click here to view reserved Objects" href="#reservedlabel">View</a>
                         </td>
                         <td>
+                            <a title="click here to register an Object if you are vendors or individuals" href="http://devtoolkit.openmobilealliance.org/OEditor/Register">Register</a><br />
+                            --<br />
                              <a title="click here to block reserve Objects" href="mailto:helpdesk@omaorg.org?Subject=Reserve%20Objects">Reserve</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Test</td>
-                        <td>
-                            <p>n/a</p>
-                        </td>
-                        <td>
-                            <p>n/a</p>
-                        </td>
-                        <td>
-                            42769 - 42800
-                        </td>
-                        <td>
-                            Object IDs for testing purpose. These IDs MUST NOT be used in production as collisions with other Object IDs are possible.
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Reserved</td>
-                        <td>
-                            <p>n/a</p>
-                        </td>
-                        <td>
-                            <p>n/a</p>
-                        </td>
-                        <td>
-                            42801 - 65534
-                        </td>
-                        <td>
-                            Reserved for future use.
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>                     
                 </tbody>
                 <caption>
                     Note: Final allocation of objectIDs will be done by OMNA Staff
