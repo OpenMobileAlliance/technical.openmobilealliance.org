@@ -5667,6 +5667,12 @@
             "status": "Approved",
             "version": "V1.0.1",
             "date": "2020-06-16"
+          },
+          {
+            "name": "V2_0-20230131-A",
+            "status": "Approved",
+            "version": "V2.0",
+            "date": "2023-01-31"
           }
         ]
       }
