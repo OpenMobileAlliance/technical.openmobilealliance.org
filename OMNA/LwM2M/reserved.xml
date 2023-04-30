@@ -234,4 +234,9 @@
         <ObjectIDEndRange>34849</ObjectIDEndRange>
         <Company>Visive Group Ltd.</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>34850</ObjectIDStartRange>
+        <ObjectIDEndRange>34899</ObjectIDEndRange>
+        <Company>Landis+Gyr</Company>
+    </Item>
 </ReservedObjects>
