@@ -3,7 +3,9 @@
 
 // eslint-disable-next-line import/no-unresolved
 // import { Octokit } from '../node_modules/@octokit/rest/dist-web/index.js';
-import { Octokit } from 'https://cdn.skypack.dev/octokit';
+// eslint-disable-next-line import/no-unresolved
+import { Octokit } from 'https://cdn.skypack.dev/@octokit/rest';
+// import { Octokit } from 'https://cdn.skypack.dev/octokit';
 
 export function getRepositoryInfo(owner, repo, setSelectedOption) {
   const { githubAuth } = window.localStorage;

@@ -28,8 +28,5 @@
     "jshint": "^2.13.1",
     "lite-server": "^2.6.1",
     "prettier": "^2.3.2"
-  },
-  "dependencies": {
-    "@octokit/rest": "^18.12.0"
   }
 }
