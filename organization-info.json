@@ -1,0 +1,12 @@
+{
+  "organization": {
+    "id": "http://www.openmobilealliance.org/tech/profiles/JSD/enablers_schema.json",
+    "name": "Open Mobile Alliance",
+    "abbreviation": "OMA",
+    "schemaVersion": "1.0",
+    "url": "http://openmobilealliance.org/wp/index.html",
+    "ftp": "https://www.openmobilealliance.org/release/",
+    "about": "https://omaspecworks.org/about/",
+    "email": "info@omaorg.org"
+  }
+}
