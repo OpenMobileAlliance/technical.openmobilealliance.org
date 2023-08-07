@@ -1,13 +1,9 @@
 <!doctype html>
 <html>
 <head>
-<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-PLCFH76');</script>
-<!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PLCFH76');</script>
+    <!-- End Google Tag Manager -->
     <title>Open Mobile Alliance - Specifications</title>
     <meta charset="utf-8">
     <!-- Font Awesome -->
@@ -28,8 +24,7 @@
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLCFH76"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLCFH76" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- This gets populated with the header.html using Javascript -->
     <div id="header"></div>
@@ -46,17 +41,32 @@
                 <li>Candidate Release (-C) – As soon as the documents making up the Release have been approved by OMA, they are published as a Candidate Release. </li>
                 <li>Approved Release (-A) – When a Candidate Release has undergone a period of public comment and completed any applicable interoperability testing then it is published as an Approved Release.</li>
             </ul>
-            <p>The table below lists the Releases that OMA has published.</p>
         </div>
-        <div id="enablers-table">
-        <!-- dynamic  Enablers Table -->
+        <div>
+          <h2>Publications</h2>
+          <div class="publications-description">
+            <p>The table below list the OMA publications.</p>
+            <div x-data="publicationsTable" x-html="render()">
+              <!-- dynamic Publications table -->
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>Releases</h2>
+          <div class="publications-description">
+            <p>The table below lists the Releases that OMA has published.</p>
+            <div id="enablers-table">
+              <!-- dynamic  Enablers Table -->
+            </div>
+          </div>
         </div>
     </div>
 
     <!-- This gets populated with the footer.html using Javascript -->
     <div id="footer"></div>
-   
+
     <!-- Load scrips at the end for faster page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <!-- DataTables CDN to load JS  -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
@@ -75,6 +85,7 @@
         });
     </script>
     <script src="Scripts/enablers-table.js"></script>
+    <script src="Scripts/publications-table.js"></script>
     <script src="./Scripts/googleanalytics.js"></script>
 </body>
 </html>
