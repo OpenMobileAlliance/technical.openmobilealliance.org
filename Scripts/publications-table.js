@@ -7,24 +7,203 @@ document.addEventListener('alpine:init', () => {
     },
     query: {
       q: '',
+      enablerAbbreviations: '',
       version: '',
       status: '',
       docType: '',
+      year: 0,
       page: 1
+    },
+    PUB_STATUS: [
+      { name: 'D', description: 'Draft' },
+      { name: 'C', description: 'Candidate' },
+      { name: 'A', description: 'Approved' },
+      { name: 'H', description: 'Historic' }
+    ],
+    getStatusFromDescription(str) {
+      return this.PUB_STATUS.filter(item => item.description === str)
+    },
+    DOC_TYPES: [
+      { name: 'AC', description: 'Application Characteristics' },
+      { name: 'AD', description: 'Architecture Document' },
+      { name: 'API', description: 'Application Programming Interface' },
+      { name: 'ASN', description: 'Abstract Syntax Notation' },
+      { name: 'DDF', description: 'Device Description Framework' },
+      { name: 'DDS', description: 'Data Definition Specification' },
+      { name: 'DTD', description: 'Document Type Definition' },
+      { name: 'ER', description: 'Enabler Release' },
+      { name: 'ERELD', description: 'Enabler Release Definition' },
+      { name: 'ERP', description: 'Enabler Release Package' },
+      { name: 'ETR', description: 'Enabler Test Requirements' },
+      { name: 'ETS', description: 'Enabler Test Specification' },
+      { name: 'EVP', description: 'Enabler Validation Plan' },
+      { name: 'MO', description: 'Management Object' },
+      { name: 'OD', description: 'Overview Document' },
+      { name: 'OMA', description: 'Open Mobile Alliance' },
+      { name: 'RD', description: 'Requirement Document' },
+      { name: 'RR', description: 'Reference Release' },
+      { name: 'RRELD', description: 'Reference Release Definition' },
+      { name: 'RRP', description: 'Reference Release Package' },
+      { name: 'SUP', description: 'Support Document' },
+      { name: 'TFP', description: 'Test Files Package' },
+      { name: 'TS', description: 'Technical Specification' },
+      { name: 'WIDL', description: 'Web Interface Definition Language' },
+      { name: 'WSDL', description: 'Web Interface Definition Language' },
+      { name: 'XML', description: 'Extensible Markup Language' },
+      { name: 'XSD', description: 'XML Schema Document' },
+    ],
+    getDocTypeFromDescription(str) {
+      return this.DOC_TYPES.filter(item => item.description === str)
     }
   })
 
   window.Alpine.data('tableSearch', () => ({
     render() {
-      return `<div class="tableSearch" >
-           <input type="text" x-model="message">
-           <button @click="search"><i class="fas fa-search"></i></button>
-         <dv>
+      return `
+        <div class="tableSearch" >
+          <div class="topic-search">
+            <input type="text"@keyup.enter="search"  x-model="message">
+            <button @click.stop="search"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="panel-group" id="publications-accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <button
+                    type="button"
+                    class="btn btn-link"
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    data-parent="#publications-accordion"
+                    aria-expanded="true"
+                    aria-controls="collapseOne">
+                    Advance filtering
+                  </button>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <div class="row row-no-gutters" >
+                  <template x-for="key in getFilterTitles()">
+                    <div :class="(key === 'enablerAbbreviations' || key === 'docTypes') ? 'col-sm-3' : 'col-sm-2'"
+                      class=""
+                    >
+                      <h5 class="text-center" x-text="key"></h5>
+                      <ul class="list-group dt-advance-filter-panel">
+                        <template x-for="item in getAdvanceFilterItemByKey(key)">
+                          <li
+                            class="list-group-item"
+                            :class="isActiveFilter(key, item) ? 'active' : ''"
+                            x-html="renderFilterItem(item, key)"
+                            @click="filterBy(key, item)"></li>
+                        </template>
+                      </ul>
+                    </div>
+                  </template>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div>
         `
     },
     message: '',
     search() {
-      window.alert(this.message)
+      if (this.$store.publicationData.query.q !== this.message) {
+        this.$store.publicationData.query.q = this.message
+        this.$store.publicationData.query.page = 1
+      }
+    },
+    getFilterTitles() {
+      return Object.keys(this.$store.publicationData.records.stats || [])
+    },
+    getAdvanceFilterItemByKey(key) {
+      return Object.keys(this.$store.publicationData.records.stats[key])
+    },
+    renderFilterItem(item, key) {
+      return `
+          ${item}
+          <span class="badge">${this.$store.publicationData.records.stats[key][item]}</span>
+      `
+    },
+    filterBy(key, item) {
+      switch (key) {
+        case 'years': {
+          const year = parseInt(item, 10)
+          this.$store.publicationData.query.year = this.$store.publicationData.query.year === year ? null : year
+          this.$store.publicationData.query.page = 1
+          break;
+        }
+        case 'statuses': {
+          const status = this.$store.publicationData.getStatusFromDescription(item)
+          if (status.length > 0) {
+            const statusName = status[0].name
+            this.$store.publicationData.query.status = this.$store.publicationData.query.status === statusName ? '' : statusName
+            this.$store.publicationData.query.page = 1
+          }
+          break;
+        }
+        case 'versions': {
+          this.$store.publicationData.query.version = this.$store.publicationData.query.version === item ? '' : item
+          this.$store.publicationData.query.page = 1
+          break;
+        }
+        case 'enablerAbbreviations': {
+          this.$store.publicationData.query.enablerAbbreviation = this.$store.publicationData.query.enablerAbbreviation === item ? '' : item
+          this.$store.publicationData.query.page = 1
+          break;
+        }
+        case 'docTypes':{
+          const docTypes = this.$store.publicationData.getDocTypeFromDescription(item)
+          if (docTypes.length > 0) {
+            const docType = docTypes[0].name
+            this.$store.publicationData.query.docType = this.$store.publicationData.query.docType === docType ? '' : docType
+            this.$store.publicationData.query.page = 1
+          }
+          break;
+        }
+        default:
+          window.console.log(`${key} - ${item}`)
+          break;
+      }
+    },
+    isActiveFilter(key, item) {
+      let res = false
+      switch (key) {
+        case 'years': {
+          const year = parseInt(item, 10)
+          res = this.$store.publicationData.query.year === year
+          break;
+        }
+        case 'statuses': {
+          const status = this.$store.publicationData.getStatusFromDescription(item)
+          if (status.length > 0) {
+            const statusName = status[0].name
+            res = this.$store.publicationData.query.status === statusName
+          }
+          break;
+        }
+        case 'versions': {
+          res = this.$store.publicationData.query.version === item
+          break;
+        }
+        case 'enablerAbbreviations': {
+          res = this.$store.publicationData.query.enablerAbbreviation === item
+          break;
+        }
+        case 'docTypes':{
+          const docTypes = this.$store.publicationData.getDocTypeFromDescription(item)
+          if (docTypes.length > 0) {
+            const docType = docTypes[0].name
+            res = this.$store.publicationData.query.docType === docType
+          }
+          break;
+        }
+        default:
+          break;
+      }
+      return res
     }
   }))
 
@@ -118,31 +297,67 @@ document.addEventListener('alpine:init', () => {
       window.console.info('Start fetching pubications data')
       await this.fetchData()
       this.$watch('$store.publicationData.query.page', (newValue, oldValue) => this.onPaginationChange(newValue, oldValue))
+      this.$watch('$store.publicationData.query.version', (newValue, oldValue) => this.onSearchChange(newValue, oldValue))
+      this.$watch('$store.publicationData.query.enablerAbbreviation', (newValue, oldValue) => this.onSearchChange(newValue, oldValue))
+      this.$watch('$store.publicationData.query.status', (newValue, oldValue) => this.onSearchChange(newValue, oldValue))
+      this.$watch('$store.publicationData.query.docType', (newValue, oldValue) => this.onSearchChange(newValue, oldValue))
+      this.$watch('$store.publicationData.query.year', (newValue, oldValue) => this.onSearchChange(newValue, oldValue))
+      this.$watch('$store.publicationData.query.q', (newValue, oldValue) => this.onQueryChange(newValue, oldValue))
     },
     async fetchData() {
-      this.$store.publicationData.records = await $.getJSON('https://ar10tsw1za.execute-api.eu-north-1.amazonaws.com/prod/publications', {
-        page: this.$store.publicationData.query.page})
-        .done(response => response)
+      const param = {
+        page: this.$store.publicationData.query.page
+      }
+
+      if (this.$store.publicationData.query.version) {
+        param.version = this.$store.publicationData.query.version
+      }
+      if (this.$store.publicationData.query.enablerAbbreviation) {
+        param.abbr = this.$store.publicationData.query.enablerAbbreviation
+      }
+      if (this.$store.publicationData.query.year) {
+        param.year = this.$store.publicationData.query.year
+      }
+      if (this.$store.publicationData.query.q ) {
+        param.q = this.$store.publicationData.query.q
+      }
+      if (this.$store.publicationData.query.status) {
+        param.status = this.$store.publicationData.query.status
+      }
+      if (this.$store.publicationData.query.docType) {
+        param.docType = this.$store.publicationData.query.docType
+      }
+
+      this.$store.publicationData.records = await $.getJSON('https://ar10tsw1za.execute-api.eu-north-1.amazonaws.com/prod/publications', param)
+        .done(response => this.processResponse(response))
         .catch((response) => {
           window.console.error(response.status);
           return [];
         })
+    },
+    processResponse(records) {
+      if (this.$store.publicationData.query.page !== records.metadata.page) {
+        this.$store.publicationData.query.page = records.metadata.page
+      }
+      return records
     },
     async onPaginationChange(newValue, oldValue) {
       if (newValue === oldValue) return
 
       await this.fetchData()
     },
+    async onSearchChange(newValue, oldValue) {
+      if (newValue === oldValue) return
+      await this.fetchData()
+    },
+    async onQueryChange(newValue, oldValue) {
+      if (newValue === oldValue) return
+      await this.fetchData()
+    },
     render () {
       return `
         <div class="pubications-table dataTables_wrapper no-footer" >
           <div x-data="tableSearch" x-html="render()" class="table-search"></div>
-          <div class="quick-filter-wrapper">
-            <div class="quick-filter-header">
-            </div>
-            <div class="quick-filter-body">
-            </div>
-          </div>
           <div class="publications-table-data">
             <div class="table-date">
               <table class="">
