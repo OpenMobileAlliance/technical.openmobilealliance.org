@@ -88,7 +88,7 @@ document.addEventListener('alpine:init', () => {
                     <div :class="(key === 'enablerAbbreviations' || key === 'docTypes') ? 'col-sm-3' : 'col-sm-2'"
                       class=""
                     >
-                      <h5 class="text-center" x-text="key"></h5>
+                      <h5 class="text-center" x-text="getTitle(key)"></h5>
                       <ul class="list-group dt-advance-filter-panel">
                         <template x-for="item in getAdvanceFilterItemByKey(key)">
                           <li
@@ -114,6 +114,34 @@ document.addEventListener('alpine:init', () => {
         this.$store.publicationData.query.q = this.message
         this.$store.publicationData.query.page = 1
       }
+    },
+    getTitle(key) {
+      let res = ''
+      switch (key) {
+        case 'years': {
+          res = 'Year'
+          break;
+        }
+        case 'statuses': {
+          res = 'Status'
+          break;
+        }
+        case 'versions': {
+          res = 'Version'
+          break;
+        }
+        case 'enablerAbbreviations': {
+          res = 'Enabler'
+          break;
+        }
+        case 'docTypes':{
+          res = 'Doc Type'
+          break;
+        }
+        default:
+          break;
+      }
+      return res
     },
     getFilterTitles() {
       return Object.keys(this.$store.publicationData.records.stats || [])
