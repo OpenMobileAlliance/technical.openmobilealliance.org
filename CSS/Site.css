@@ -338,3 +338,12 @@ tr:hover .row-action span {
 .publications-description .panel-body {
   padding: 2px;
 }
+
+.toggle-button {
+  outline: none;
+  border: none;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}

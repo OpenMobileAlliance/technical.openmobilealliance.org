@@ -12,7 +12,8 @@ document.addEventListener('alpine:init', () => {
       status: '',
       docType: '',
       year: 0,
-      page: 1
+      page: 1,
+      perPage: 10
     },
     PUB_STATUS: [
       { name: 'D', description: 'Draft' },
@@ -20,6 +21,7 @@ document.addEventListener('alpine:init', () => {
       { name: 'A', description: 'Approved' },
       { name: 'H', description: 'Historic' }
     ],
+    PER_PAGE_LIST: [10, 25, 50, 100],
     getStatusFromDescription(str) {
       return this.PUB_STATUS.filter(item => item.description === str)
     },
@@ -61,17 +63,32 @@ document.addEventListener('alpine:init', () => {
     render() {
       return `
         <div class="tableSearch" >
-          <div class="topic-search">
-            <input type="text"@keyup.enter="search"  x-model="message">
-            <button @click.stop="search"><i class="fas fa-search"></i></button>
+          <div class="clearfix">
+            <div class="dataTables_length">
+              <label>
+                Show
+                <select class="" @change="perPageChange">
+                <template x-for="pp in getPerPageSelection()">
+                  <option :key="pp" :value="pp" x-text="pp"></option>
+                </template>
+                </select>
+                entries
+              </label>
+            </div>
+            <div class="topic-search dataTables_filter">
+              <label>
+                Search
+                <input type="search" @keyup.enter="search"  x-model="message">
+              </label>
+            </div>
           </div>
-          <div class="panel-group" id="publications-accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel-group mb-0" id="publications-accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
                   <button
                     type="button"
-                    class="btn btn-link"
+                    class="btn-link toggle-button"
                     data-toggle="collapse"
                     data-target="#collapseOne"
                     data-parent="#publications-accordion"
@@ -81,7 +98,7 @@ document.addEventListener('alpine:init', () => {
                   </button>
                 </h4>
               </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                   <div class="row row-no-gutters" >
                   <template x-for="key in getFilterTitles()">
@@ -112,6 +129,16 @@ document.addEventListener('alpine:init', () => {
     search() {
       if (this.$store.publicationData.query.q !== this.message) {
         this.$store.publicationData.query.q = this.message
+        this.$store.publicationData.query.page = 1
+      }
+    },
+    getPerPageSelection(){
+      return this.$store.publicationData.PER_PAGE_LIST || []
+    },
+    perPageChange(e) {
+      const perPage = Number(e.target.value)
+      if(this.$store.publicationData.query.perPage !== perPage) {
+        this.$store.publicationData.query.perPage = perPage
         this.$store.publicationData.query.page = 1
       }
     },
@@ -315,8 +342,22 @@ document.addEventListener('alpine:init', () => {
       }
       return ''
     },
+    getPagingInfoMessage() {
+      const data = this.getPagingData()
+      if (data) {
+        let firstRecord = (data.page - 1) * data.perPage
+        firstRecord = firstRecord <= 0 ? 1 : firstRecord
+        let lastRecord = firstRecord + data.perPage
+        lastRecord = lastRecord < data.numberOfRecords ? lastRecord : data.numberOfRecords - 1
+        return `Showing ${firstRecord} to ${lastRecord} of ${data.numberOfRecords - 1} entries`
+      }
+      return ''
+    },
     render() {
-      return `<div class="dataTables_paginate paging_simple_numbers">${this.renderPrev()}${this.paginate()}${this.renderNext()}</div>`
+      return `
+        <div class="dataTables_info" x-text="getPagingInfoMessage()"></div>
+        <div class="dataTables_paginate paging_simple_numbers">${this.renderPrev()}${this.paginate()}${this.renderNext()}</div>
+      `
     }
   }))
 
@@ -325,6 +366,7 @@ document.addEventListener('alpine:init', () => {
       window.console.info('Start fetching pubications data')
       await this.fetchData()
       this.$watch('$store.publicationData.query.page', (newValue, oldValue) => this.onPaginationChange(newValue, oldValue))
+      this.$watch('$store.publicationData.query.perPage', (newValue, oldValue) => this.onPerPaginationChange(newValue, oldValue))
       this.$watch('$store.publicationData.query.version', (newValue, oldValue) => this.onSearchChange(newValue, oldValue))
       this.$watch('$store.publicationData.query.enablerAbbreviation', (newValue, oldValue) => this.onSearchChange(newValue, oldValue))
       this.$watch('$store.publicationData.query.status', (newValue, oldValue) => this.onSearchChange(newValue, oldValue))
@@ -334,7 +376,8 @@ document.addEventListener('alpine:init', () => {
     },
     async fetchData() {
       const param = {
-        page: this.$store.publicationData.query.page
+        page: this.$store.publicationData.query.page,
+        perPage: this.$store.publicationData.query.perPage
       }
 
       if (this.$store.publicationData.query.version) {
@@ -370,6 +413,11 @@ document.addEventListener('alpine:init', () => {
       return records
     },
     async onPaginationChange(newValue, oldValue) {
+      if (newValue === oldValue) return
+
+      await this.fetchData()
+    },
+    async onPerPaginationChange(newValue, oldValue) {
       if (newValue === oldValue) return
 
       await this.fetchData()
