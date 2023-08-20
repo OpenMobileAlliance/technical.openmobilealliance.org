@@ -79,7 +79,7 @@ document.addEventListener('alpine:init', () => {
               <label>
                 Search
                 <input type="search"
-                  @keyup="search" 
+                  @keyup="search"
                   x-model="message">
               </label>
             </div>
@@ -354,10 +354,10 @@ document.addEventListener('alpine:init', () => {
       const data = this.getPagingData()
       if (data) {
         let firstRecord = (data.page - 1) * data.perPage
-        firstRecord = firstRecord <= 0 ? 1 : firstRecord
-        let lastRecord = firstRecord + data.perPage
-        lastRecord = lastRecord < data.numberOfRecords ? lastRecord : data.numberOfRecords - 1
-        return `Showing ${firstRecord} to ${lastRecord} of ${data.numberOfRecords - 1} entries`
+        firstRecord = firstRecord <= 0 ? 1 : firstRecord + 1
+        let lastRecord = firstRecord - 1 + data.perPage
+        lastRecord = lastRecord < data.numberOfRecords ? lastRecord : data.numberOfRecords
+        return `Showing ${firstRecord} to ${lastRecord} of ${data.numberOfRecords} entries`
       }
       return ''
     },
