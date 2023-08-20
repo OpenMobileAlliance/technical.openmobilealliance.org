@@ -78,7 +78,9 @@ document.addEventListener('alpine:init', () => {
             <div class="topic-search dataTables_filter">
               <label>
                 Search
-                <input type="search" @keyup.enter="search"  x-model="message">
+                <input type="search"
+                  @keyup="search" 
+                  x-model="message">
               </label>
             </div>
           </div>
@@ -128,6 +130,12 @@ document.addEventListener('alpine:init', () => {
     message: '',
     search() {
       if (this.$store.publicationData.query.q !== this.message) {
+        this.$store.publicationData.query.q = this.message
+        this.$store.publicationData.query.page = 1
+      }
+    },
+    clearSearch() {
+      if (this.message.length < 1) {
         this.$store.publicationData.query.q = this.message
         this.$store.publicationData.query.page = 1
       }
