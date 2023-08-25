@@ -330,3 +330,20 @@ tr:hover .row-action span {
   color: #5A5A5A;
   font-weight: 300;
 }
+
+.dt-advance-filter-panel {
+  overflow-y: scroll;
+  height: 17em;
+}
+.publications-description .panel-body {
+  padding: 2px;
+}
+
+.toggle-button {
+  outline: none;
+  border: none;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
