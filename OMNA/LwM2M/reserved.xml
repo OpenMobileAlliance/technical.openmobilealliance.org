@@ -244,4 +244,9 @@
         <ObjectIDEndRange>34949</ObjectIDEndRange>
         <Company>Sinai RnD</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>34950</ObjectIDStartRange>
+        <ObjectIDEndRange>34999</ObjectIDEndRange>
+        <Company>Korea Electronics Technology Institute</Company>
+    </Item>
 </ReservedObjects>
