@@ -4,12 +4,7 @@
 // eslint-disable-next-line import/no-unresolved
 // import { Octokit } from '../node_modules/@octokit/rest/dist-web/index.js';
 // eslint-disable-next-line import/no-unresolved
-// import { Octokit } from 'npm:octokit';
-// import { Octokit } from 'https://cdn.skypack.dev/pin/@octokit/rest@v20.0.1-XgJvn0V4JqQ9Kw4aAwZH/mode=imports,min/optimized/@octokit/rest.js';
-// import { Octokit } from 'https://cdn.skypack.dev/octokit?dts';
-// import { Octokit } from 'https://cdn.skypack.dev/octokit';
-import { Octokit } from 'https://cdn.skypack.dev/pin/octokit@v1.8.1-ssJyP5khxBymVoxX8sh7/mode=imports,min/optimized/octokit.js';
-// import { Octokit } from 'https://cdn.skypack.dev/octokit';
+import { Octokit } from 'https://esm.sh/@octokit/rest';
 
 export function getRepositoryInfo(owner, repo, setSelectedOption) {
   const { githubAuth } = window.localStorage;
