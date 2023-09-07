@@ -249,4 +249,9 @@
         <ObjectIDEndRange>34999</ObjectIDEndRange>
         <Company>Korea Electronics Technology Institute</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35000</ObjectIDStartRange>
+        <ObjectIDEndRange>35049</ObjectIDEndRange>
+        <Company>M2M Solutions AB</Company>
+    </Item>
 </ReservedObjects>
