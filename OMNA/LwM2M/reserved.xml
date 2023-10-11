@@ -254,4 +254,9 @@
         <ObjectIDEndRange>35049</ObjectIDEndRange>
         <Company>M2M Solutions AB</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35050</ObjectIDStartRange>
+        <ObjectIDEndRange>35099</ObjectIDEndRange>
+        <Company>PGE Dystrybucja SA</Company>
+    </Item>
 </ReservedObjects>
