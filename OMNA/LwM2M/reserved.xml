@@ -259,4 +259,9 @@
         <ObjectIDEndRange>35099</ObjectIDEndRange>
         <Company>PGE Dystrybucja SA</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35100</ObjectIDStartRange>
+        <ObjectIDEndRange>35149</ObjectIDEndRange>
+        <Company>BH Technologies</Company>
+    </Item>
 </ReservedObjects>
