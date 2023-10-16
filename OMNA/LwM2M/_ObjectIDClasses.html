@@ -1,0 +1,153 @@
+<table id="registry-table" class="table-bordered">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Label</th>
+      <th>URN </th>
+      <th>Object ID range</th>
+      <th>Description</th>
+      <th colspan="2">Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><p>OMA</p></td>
+      <td><p>oma</p></td>
+      <td><p><code>urn:oma:lwm2m:oma:&lt;id&gt;:&lt;version&gt;</code></p></td>
+      <td>0 - 1023</td>
+      <td>
+        Objects Produced by OMA. Only OMA can use this range.<br>
+        0-499 DM&SE Working Group<br>
+        500-1023 IPSO Working Group
+      </td>
+      <td><a title="click here to view OMA defined Objects" href="#omalabel">View</a></td>
+      <td><a title="these objects are only registered by OMA Working Groups" href="http://devtoolkit.openmobilealliance.org/OEditor/Default">Register</a></td>
+    </tr>
+    <tr>
+      <td>
+        <p>Reserved</p>
+      </td>
+      <td>
+        <p>reserved</p>
+      </td>
+      <td>n/a</td>
+      <td>
+        1024 - 2047
+      </td>
+      <td>
+        Reserved for future use
+      </td>
+      <td>
+        --
+      </td>
+      <td>
+        --
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>SDO</p>
+      </td>
+      <td>
+        <p>ext</p>
+      </td>
+      <td>
+        <p><code>urn:oma:lwm2m:ext:&lt;id&gt;:&lt;version&gt;</code></p>
+      </td>
+      <td>
+        2048 - 10240
+      </td>
+      <td>
+        Objects registered by 3rd party standards organisations or alliances.
+      </td>
+      <td>
+        <a title="click here to view Objects registered by 3rd party SDOs" href="#extlabel">View</a>
+      </td>
+      <td>
+        <a title="click here to register an Object if you are from a Standard Organization" href="http://devtoolkit.openmobilealliance.org/OEditor/Default">Register</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>Vendors</p>
+      </td>
+      <td>
+        <p>x</p>
+      </td>
+      <td>
+        <p><code>urn:oma:lwm2m:x:&lt;id&gt;:&lt;version&gt;</code></p>
+      </td>
+      <td>
+        10241 - 32768
+      </td>
+      <td>
+        Objects registered by companies or individuals.
+      </td>
+      <td>
+        <a title="click here to view Objects registered by companies and individuals" href="#x_label">View</a>
+      </td>
+      <td>
+        <a title="click here to register an Object if you are vendors or individuals" href="http://devtoolkit.openmobilealliance.org/OEditor/Default">Register</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Company Reserved</td>
+      <td>
+        <p>x</p>
+      </td>
+      <td>
+        <p><code>urn:oma:lwm2m:x:&lt;id&gt;:&lt;version&gt;</code></p>
+      </td>
+      <td>
+        32769 - 42768
+      </td>
+      <td>
+        Company bulk reservations of up to 50 Object IDs. This range is to create private LwM2M Objects that are not
+        published on the OMNA Lightweight Object Registry.
+      </td>
+      <td>
+        <a title="click here to view reserved Objects" href="#reservedlabel">View</a>
+      </td>
+      <td>
+        <a title="click here to block reserve Objects" href="mailto:helpdesk@omaorg.org?Subject=Reserve%20Objects">Reserve</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Test</td>
+      <td>
+        <p>n/a</p>
+      </td>
+      <td>
+        <p>n/a</p>
+      </td>
+      <td>
+        42769 - 42800
+      </td>
+      <td>
+        Object IDs for testing purpose. These IDs MUST NOT be used in production as collisions with other Object IDs are possible.
+      </td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>Reserved</td>
+      <td>
+        <p>n/a</p>
+      </td>
+      <td>
+        <p>n/a</p>
+      </td>
+      <td>
+        42801 - 65534
+      </td>
+      <td>
+        Reserved for future use.
+      </td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+  </tbody>
+  <caption>
+    Note: Final allocation of objectIDs will be done by OMNA Staff.
+  </caption>
+</table>
