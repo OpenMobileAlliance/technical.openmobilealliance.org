@@ -356,7 +356,7 @@ export class DynamicTableFilters extends LitElement {
               </button>
             </h4>
           </div>
-          <div id="${this.collapseId}" class="panel-collapse" role="tabpanel" aria-labelledby="${this.headerId}">
+          <div id="${this.collapseId}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="${this.headerId}">
             <div class="">
               <div class="row row-no-gutters">
                 ${this.getFilterKeys()?.map(key => this.renderFilterPanel(key))}
@@ -433,10 +433,10 @@ export class DynamicTableData extends LitElement {
     let res = ''
     switch (cell.type) {
       case 'text':
-        res =  html`<td>${row[cell.key]}</td>`
+        res =  html`<td class="${cell.class}">${row[cell.key]}</td>`
         break
       case 'function':
-        res = html`<td>${unsafeHTML(cell.format(row))}`
+        res = html`<td class="${cell.class}">${unsafeHTML(cell.format(row))}`
         break
       default:
         console.log(cell)

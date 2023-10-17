@@ -123,7 +123,6 @@
           <dynamic-table
             id="objectid-table"
             class="objectid-table"
-            data-store="objectid"
           >
           </dynamic-table>
         </div>
@@ -134,13 +133,15 @@
           <dynamic-table
             id="resourceid-table"
             class="resourceid-table"
-            data-store="resourceid"
           >
           </dynamic-table>
         </div>
-        </div>
         <!-- Vendor Bulk Reservations -->
         <div class="tab-pane fade" id="nav-reserved" role="tabpanel" aria-labelledby="nav-reserved-tab" tabindex="0">
+          <dynamic-table
+            id="reservedByVendors-table"
+            class="reservedByVendors-table"
+          >
         </div>
       </div>
     </div>
@@ -166,6 +167,11 @@
         return row.tsLink ?
           `<a href="${row.tsURL}"><img src="../../Images/Windows_download.gif" title="Download TS" /></a>` :
           `-`
+      }
+
+      window.formatResourceIdTableTSLinkCell = function formatResourceIdTableTSLinkCell(row) {
+        return row.tsLink > 0 ?
+          `<a href="${row.tsURL}">${row.resourceName}</a>` : `${row.resourceName}`
       }
 
       $(document).ready(() => {
@@ -208,11 +214,11 @@
           const objectTable = document.getElementById('objectid-table')
           objectTable.columns = [
             { key: 'urn', title: 'URN / Verson', type: 'text', format: '', class: ''},
-            { key: 'xmlLink', title: 'XML Name', type: 'function', format: window.formatObjectTableDDFLinkXmlCell, class: ''},
-            { key: 'xmlEditor', title: 'LwM2M Editor', type: 'function', format: window.formatObjectTableDDFEditorLinkCell, class: ''},
+            { key: 'xmlLink', title: 'XML Name', type: 'function', format: window.formatObjectTableDDFLinkXmlCell, class: 'text-center'},
+            { key: 'xmlEditor', title: 'LwM2M Editor', type: 'function', format: window.formatObjectTableDDFEditorLinkCell, class: 'text-center'},
             { key: 'name', title: 'Object Name', type: 'text', format: '', class: '', search: true},
-            { key: 'owner', title: 'Owner', type: 'text', format: '', class: '', search: true},
-            { key: 'tsLink', title: 'Technical Specification', type: 'function', format: window.formatObjectTableTSLinkCell, class: ''},
+            { key: 'owner', title: 'Owner', type: 'text', format: '', class: 'text-center', search: true},
+            { key: 'tsLink', title: 'Technical Specification', type: 'function', format: window.formatObjectTableTSLinkCell, class: 'text-center'},
             { key: 'description', title: 'Description', type: 'text', format: '', class: '', search: true},
           ]
 
@@ -299,46 +305,61 @@
             }
           })
 
+          const reservedByVendorsTable = document.getElementById('reservedByVendors-table')
+          reservedByVendorsTable.columns = [
+            { key: 'objectIDRange', title: 'XML Name', type: 'text', format: '', class: 'text-center', search: true},
+            { key: 'company', title: 'XML Name', type: 'text', format: '', class: 'text-center', search: true},
+          ]
+
+          reservedByVendorsTable.filters = [
+            // { key: 'company', title: 'Company', type: 'text' },
+          ]
+
           // Load the reserved.xml data and fill in the reserved objects table
-          // $.ajax({
-          //   type: 'GET',
-          //   async: false,
-          //   url: reservedXMLFileUrl,
-          //   dataType: 'xml',
-          //   success(xmlDoc) {
-          //     const $xml = $(xmlDoc);
-          //     const $items = $xml.find('Item');
+          $.ajax({
+            type: 'GET',
+            async: false,
+            url: reservedXMLFileUrl,
+            dataType: 'xml',
+            success(xmlDoc) {
+              const $xml = $(xmlDoc);
+              const $items = $xml.find('Item');
+              const newData = []
 
-          //     const $tableselected = $('#reservedobjects_tbl');
-          //     $tableselected.find('tbody').replaceWith('<tbody></tbody>');
+              $items.each(function () {
+                const objectIDStartRange = $(this).find('ObjectIDStartRange').text();
+                const objectIDEndRange = $(this).find('ObjectIDEndRange').text();
+                const company = $(this).find('Company').text();
 
-          //     $items.each(function () {
-          //       const objectIDStartRange = $(this).find('ObjectIDStartRange').text();
-          //       const objectIDEndRange = $(this).find('ObjectIDEndRange').text();
-          //       const company = $(this).find('Company').text();
+                let objectIDRange = `${objectIDStartRange} - ${objectIDEndRange}`;
+                if (objectIDStartRange === objectIDEndRange || !objectIDEndRange) {
+                  objectIDRange = objectIDStartRange;
+                }
 
-          //       let objectIDRange = `${objectIDStartRange} - ${objectIDEndRange}`;
-          //       if (objectIDStartRange === objectIDEndRange || !objectIDEndRange) {
-          //         objectIDRange = objectIDStartRange;
-          //       }
+                newData.push({
+                  objectIDRange,
+                  company
+                })
+              })
 
-          //       $tableselected.find('tbody').append(`<tr><td>${objectIDRange}</td><td>${company}</td></tr>`);
-          //     });
-          //   },
-          //   error(request, textStatus, errorThrown) {
-          //     handleError(request, textStatus, `Unable to load reserved XML:\n${errorThrown}`);
-          //     // $('#errors').append(`Unable to load reserved XML:\n${JSON.stringify(err)}`);
-          //   },
-          // });
+              reservedByVendorsTable.updateData(newData)
+            },
+            error(request, textStatus, errorThrown) {
+              window.console.debug('request', request);
+              window.console.debug('textStatus', textStatus);
+              window.console.debug('errorThrown', errorThrown);
+              // handleError(request, textStatus, `Unable to load reserved XML:\n${errorThrown}`);
+            },
+          });
 
           const resourceidTable = document.getElementById('resourceid-table')
           resourceidTable.columns = [
-            { key: 'resourceID', title: 'ResourceID*', type: 'text', format: '', search: false },
-            { key: 'resourceName', title: 'Name/Technical Spec*', type: 'text', format: '', search: true },
-            { key: 'accessType', title: 'Operation*', type: 'text', format: '', search: false },
-            { key: 'type', title: 'Type*', type: 'text', format: '', search: false },
-            { key: 'range', title: 'Range/Enumeration*', type: 'text', format: '', search: false },
-            { key: 'units', title: 'Units*', type: 'text', format: '', search: false },
+            { key: 'resourceID', title: 'ResourceID*', type: 'text', format: '', class: 'text-center', search: true },
+            { key: 'resourceName', title: 'Name/Technical Spec*', type: 'function', format: window.formatResourceIdTableTSLinkCell, search: true },
+            { key: 'accessType', title: 'Operation*', type: 'text', format: '', class: 'text-center', search: false },
+            { key: 'type', title: 'Type*', type: 'text', format: '', class: 'text-center', search: false },
+            { key: 'range', title: 'Range/Enumeration*', type: 'text', format: '', class: 'text-center', search: false },
+            { key: 'units', title: 'Units*', type: 'text', format: '', class: 'text-center', search: false },
             { key: 'submitter', title: 'Submitter', type: 'text', format: '', search: false },
             { key: 'description', title: 'Description', type: 'text', format: '', search: true },
           ]
