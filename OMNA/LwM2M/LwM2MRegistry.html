@@ -223,6 +223,8 @@
             { key: 'version', title: 'Version', type: 'text' },
           ]
 
+          objectTable.caption=`<a href="http://devtoolkit.openmobilealliance.org/OEditor/Register" title="click here to register a new (ext-label) Object ID">Register a new Object produced by a 3rd party SDO (Standards Development Organization</a>`
+
           // clear data store
           $.ajax({
             type: 'GET',
@@ -296,6 +298,112 @@
               // handleError(request, textStatus, `Unable to load DDF:\n${errorThrown}`);
             }
           })
+
+          // Load the reserved.xml data and fill in the reserved objects table
+          // $.ajax({
+          //   type: 'GET',
+          //   async: false,
+          //   url: reservedXMLFileUrl,
+          //   dataType: 'xml',
+          //   success(xmlDoc) {
+          //     const $xml = $(xmlDoc);
+          //     const $items = $xml.find('Item');
+
+          //     const $tableselected = $('#reservedobjects_tbl');
+          //     $tableselected.find('tbody').replaceWith('<tbody></tbody>');
+
+          //     $items.each(function () {
+          //       const objectIDStartRange = $(this).find('ObjectIDStartRange').text();
+          //       const objectIDEndRange = $(this).find('ObjectIDEndRange').text();
+          //       const company = $(this).find('Company').text();
+
+          //       let objectIDRange = `${objectIDStartRange} - ${objectIDEndRange}`;
+          //       if (objectIDStartRange === objectIDEndRange || !objectIDEndRange) {
+          //         objectIDRange = objectIDStartRange;
+          //       }
+
+          //       $tableselected.find('tbody').append(`<tr><td>${objectIDRange}</td><td>${company}</td></tr>`);
+          //     });
+          //   },
+          //   error(request, textStatus, errorThrown) {
+          //     handleError(request, textStatus, `Unable to load reserved XML:\n${errorThrown}`);
+          //     // $('#errors').append(`Unable to load reserved XML:\n${JSON.stringify(err)}`);
+          //   },
+          // });
+
+          const resourceidTable = document.getElementById('resourceid-table')
+          resourceidTable.columns = [
+            { key: 'resourceID', title: 'ResourceID*', type: 'text', format: '', search: false },
+            { key: 'resourceName', title: 'Name/Technical Spec*', type: 'text', format: '', search: true },
+            { key: 'accessType', title: 'Operation*', type: 'text', format: '', search: false },
+            { key: 'type', title: 'Type*', type: 'text', format: '', search: false },
+            { key: 'range', title: 'Range/Enumeration*', type: 'text', format: '', search: false },
+            { key: 'units', title: 'Units*', type: 'text', format: '', search: false },
+            { key: 'submitter', title: 'Submitter', type: 'text', format: '', search: false },
+            { key: 'description', title: 'Description', type: 'text', format: '', search: true },
+          ]
+
+          resourceidTable.filters = [
+            { key: 'submitter', title: 'Submitter', type: 'text' },
+            { key: 'resourceName', title: 'Name', type: 'text' },
+            { key: 'accessType', title: 'Operations', type: 'text' },
+            { key: 'type', title: 'Type', type: 'text' },
+          ]
+
+          resourceidTable.caption = `<a title="click here to register a new (Reusable) Resource ID" href="http://devtoolkit.openmobilealliance.org/OEditor/Register">Register a new Resource produced by 3rd parties.</a>`
+
+          // Load the common.xml data and fill in the common objects table
+          $.ajax({
+            type: 'GET',
+            async: false,
+            url: commonXMLFileUrl,
+            dataType: 'xml',
+            success(xmlDoc) {
+              const $xml = $(xmlDoc)
+              const $items = $xml.find('Item')
+              const newData = []
+
+              $items.each(function () {
+                const resourceID = $(this).attr('ID');
+                const resourceName = $(this).find('Name').text();
+                const accessType = $(this).find('Operations').text();
+                const multipleInstance = $(this).find('MultipleInstances').text();
+                const mandatory = $(this).find('Mandatory').text();
+                const type = $(this).find('Type').text();
+                const range = $(this).find('RangeEnumeration').text();
+                const units = $(this).find('Units').text();
+                const submitter = $(this).find('Submitter').text();
+                const description = $(this).find('Description').text();
+                const tsURL = $(this).find('TS').text();
+                const tsLink = $(this).find('TSLink').text();
+
+                newData.push({
+                  resourceID,
+                  resourceName,
+                  accessType: accessType || 'none',
+                  multipleInstance,
+                  mandatory,
+                  type: type || 'undefined',
+                  range,
+                  units,
+                  submitter,
+                  description,
+                  tsURL,
+                  tsLink,
+                })
+
+              })
+
+              resourceidTable.updateData(newData)
+            },
+            error(request, textStatus, errorThrown) {
+              window.console.debug('request', request);
+              window.console.debug('textStatus', textStatus);
+              window.console.debug('errorThrown', errorThrown);
+              // handleError(request, textStatus, `Unable to load common object XML:\n${errorThrown}`);
+            }
+          })
+
         }
 
         function setSelectedValue(selectObj, urlValueToSet) {

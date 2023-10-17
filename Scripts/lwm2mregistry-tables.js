@@ -14,6 +14,7 @@ import {LitElement, css, html, unsafeHTML} from 'https://cdn.jsdelivr.net/gh/lit
 
 export class DynamicTable extends LitElement {
   static properties = {
+    caption: { type: String, value: ''},
     data: { type: Array },
     columns: { type: Array },
     filters: { type: Array },
@@ -27,6 +28,7 @@ export class DynamicTable extends LitElement {
 
   constructor(){
     super()
+    this.caption = ''
     this.data = []
     this.columns = []
     this.filters = []
@@ -177,7 +179,7 @@ export class DynamicTable extends LitElement {
           @queryChenge="${this.queryChange}"
         ></table-search>
         <table-filters @filterChange="${this.filterChange}"></table-filters>
-        <table-data></table-data>
+        <table-data caption=${this.caption}></table-data>
         <table-pagination
           :perPage=${this.perPage}
           page=${this.page}
@@ -371,12 +373,14 @@ customElements.define('table-filters', DynamicTableFilters)
 
 export class DynamicTableData extends LitElement {
   static properties = {
+    caption: { type: String, value: ''},
     displayData: {type: Array, attribute: false, value: []},
     columns: {type: Array, attribute: false, value: []}
   }
 
   constructor() {
     super()
+    this.caption = ''
     this.displayData = []
     this.columns = []
   }
@@ -453,11 +457,7 @@ export class DynamicTableData extends LitElement {
   generateCaption() {
     return html`
       <caption>
-        <a href="http://devtoolkit.openmobilealliance.org/OEditor/Register"
-          title="click here to register a new (ext-label) Object ID"
-        >
-          Register a new Object produced by a 3rd party SDO (Standards Development Organization
-        </a>
+        ${unsafeHTML(this.caption)}
       </caption>
     `
   }
