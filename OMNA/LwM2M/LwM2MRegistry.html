@@ -9,7 +9,7 @@
     <!-- Font awesome for arrows -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- Normalize CSS -->
-    <link rel="stylesheet" href="../../CSS/Normalize.css" />
+    <link rel="stylesheet" href="/CSS/Normalize.css" />
 
 
     <link rel="shortcut icon" href="https://www.omaspecworks.org/wp-content/uploads/2018/01/favicon-1.png" type="image/x-icon">
@@ -55,7 +55,7 @@
     </div>
     <!-- Main content -->
     <div class="container">
-      <div>
+      <div class="my-5">
         <h1>
           OMA LightweightM2M (LwM2M) Object and Resource Registry
         </h1>
@@ -150,6 +150,97 @@
     <div id="footer"></div>
     <script src="../../Scripts/config.js"></script>
     <script type="module" src="../../Scripts/lwm2mregistry-tables.js"></script>
+    <script>
+      function handleBranchSelectorChange(selectObject) {
+        // Clear the errors when selecting a different release/branch
+        $('#show-errors').hide();
+        $('#hide-errors').hide()
+        $('#errors').html('');
+
+        const selectObjValue = JSON.parse(selectObject.value);
+
+        const {tagName} = selectObjValue;
+        const {branchName} = selectObjValue;
+        const {url} = selectObjValue;
+
+        if (tagName)
+        history.pushState({'pageTitle':document.title},'',`?releaseTagName=${tagName}`)
+
+        if (branchName)
+        history.pushState({'pageTitle':document.title},'',`?branchName=${branchName}`)
+
+        fetchDDF(tagName || branchName, `${url}/DDF.xml`,'./reserved.xml',`${url}/Common.xml`);
+      }
+
+      function handleSaveGithubCredentials() {
+        // $('#github-credentials-form').serializeArray();
+        const username = $('#username').val();
+        const password = $('#user-access-token').val();
+
+        const formData = {};
+        formData.username = username;
+        formData.userAccessToken = password;
+
+        window.localStorage.githubAuth = JSON.stringify(formData);
+
+        $('#github-credentials-form').hide();
+        $('#github-credentials-remove-button').show();
+      }
+
+      function handleRemoveGithubCredentials() {
+        window.localStorage.removeItem('githubAuth');
+
+        $('#github-credentials-form').show();
+        $('#github-credentials-remove-button').hide();
+      }
+
+      function handleError(request, textStatus, errorThrow) {
+        const rateLimit = request.getResponseHeader('X-RateLimit-Limit');
+        const rateLimitRemaining = request.getResponseHeader('X-RateLimit-Remaining');
+        const rateLimitResetTime = request.getResponseHeader('X-RateLimit-Reset');
+
+        const errorMessage = request.responseJSON?.message || errorThrow?.message || errorThrow;
+
+        let rateLimitWillResetAt;
+        if (rateLimitResetTime) rateLimitWillResetAt = new Date(rateLimitResetTime * 1000);
+
+        const $errorSelector = $('#errors');
+        // Clear the errors so only show one at a time
+        $errorSelector.html('');
+        const $branchSelector = $('#branch-selector-dd');
+
+        $branchSelector.append($('<option/>').val('').text('Error retrieving data'));
+
+        $errorSelector.append(`${errorMessage}<br/>`);
+
+        if (rateLimitRemaining === '0' && rateLimitWillResetAt)
+        $errorSelector.append(`Github API Rate Limit Exceeded.<br/>This will reset at ${rateLimitWillResetAt.toString()}<br/>`);
+
+        $('#show-errors').show();
+      };
+
+      // On back button
+      window.onpopstate = (e) => {
+        if(e.state){
+            window.location.href = window.location.href;
+            // document.getElementById("content").innerHTML = e.state.html;
+            // document.title = e.state.pageTitle;
+        } else {
+            window.location.href = window.location.href;
+        }
+      };
+
+      $(document).ready(() => {
+        $('#header').load("../../header.html");
+        $('#footer').load("../../footer.html");
+        $('#nav-information').load("./_OMNAInformation.html").tab('show');
+
+        $('#objectid-classes').load("./_ObjectIDClasses.html");
+        $('#resourceid-classes').load("./_ResourceIDClasses.html");
+      })
+
+    </script>
+
     <script charset="utf-8" type="module">
       import {getRepositoryInfo} from "../../Scripts/getRepositoryInfo.js";
 
@@ -178,13 +269,6 @@
 
         const {owner,repo,productionBranchName,testBranchName,devBranchName,testUrlPrefix,devUrlPrefix,showBranchSelectionQueryString} = config;
 
-        $('#header').load("../../header.html");
-        $('#footer').load("../../footer.html");
-        $('#nav-information').load("./_OMNAInformation.html").tab('show');
-
-        $('#objectid-classes').load("./_ObjectIDClasses.html");
-        $('#resourceid-classes').load("./_ResourceIDClasses.html");
-
         const {githubAuth} = window.localStorage;
 
         if (!githubAuth) {
@@ -195,9 +279,7 @@
           $('#github-credentials-remove-button').show();
         }
 
-
-
-        function fetchDDF(branchOrReleaseTagName, ddfXMLFileURL, reservedXMLFileUrl, commonXMLFileUrl) {
+        window.fetchDDF = function fetchDDF(branchOrReleaseTagName, ddfXMLFileURL, reservedXMLFileUrl, commonXMLFileUrl) {
           let urlPath = '';
           const urlPathArray = ddfXMLFileURL.split('/');
 
@@ -348,7 +430,7 @@
               window.console.debug('request', request);
               window.console.debug('textStatus', textStatus);
               window.console.debug('errorThrown', errorThrown);
-              // handleError(request, textStatus, `Unable to load reserved XML:\n${errorThrown}`);
+              handleError(request, textStatus, `Unable to load reserved XML:\n${errorThrown}`);
             },
           });
 
@@ -421,7 +503,7 @@
               window.console.debug('request', request);
               window.console.debug('textStatus', textStatus);
               window.console.debug('errorThrown', errorThrown);
-              // handleError(request, textStatus, `Unable to load common object XML:\n${errorThrown}`);
+              handleError(request, textStatus, `Unable to load common object XML:\n${errorThrown}`);
             }
           })
 
@@ -457,11 +539,6 @@
         }
 
         fetchDDF(tagName || branchName, `${url}/DDF.xml`,'./reserved.xml',`${url}/Common.xml`);
-        // SetUpExpandableTDs();
-        // TablesWithRowspanStyleChanges();
-
-        // Removed this because we don't want to set the query string on the initial load of the page.
-        // selectObj.dispatchEvent(new Event('change'));
       }
 
       const urlParams = new URLSearchParams(window.location.search);
