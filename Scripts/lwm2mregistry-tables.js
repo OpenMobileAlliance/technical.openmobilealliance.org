@@ -85,14 +85,22 @@ export class DynamicTable extends LitElement {
       }
 
       this.numberOfRecords = filteredData.length
-      this.maxPage = Math.floor(this.numberOfRecords / this.perPage) + 1
-      this.page = this.page > this.maxPage ? this.maxPage : this.page
+      if (this.perPage === -1) {
+        this.maxPage = 1
+        this.page = 1
 
-      const firstRecord = this.page * this.perPage - this.perPage
-      const lastRecord= firstRecord + this.perPage > this.numberOfRecords ? this.numberOfRecords : firstRecord + this.perPage
+        for (let index = 0; index < filteredData.length; index++) {
+          displayData.push(filteredData[index])
+        }
+      } else {
+        this.maxPage = Math.floor(this.numberOfRecords / this.perPage) + 1
+        this.page = this.page > this.maxPage ? this.maxPage : this.page
+        const firstRecord = this.page * this.perPage - this.perPage
+        const lastRecord= firstRecord + this.perPage > this.numberOfRecords ? this.numberOfRecords : firstRecord + this.perPage
 
-      for (let index = firstRecord; index < lastRecord; index++) {
-        displayData.push(filteredData[index])
+        for (let index = firstRecord; index < lastRecord; index++) {
+          displayData.push(filteredData[index])
+        }
       }
       this.updateFilterData(filteredData)
       tableData.updateDisplayData(displayData)
@@ -181,7 +189,7 @@ export class DynamicTable extends LitElement {
         <table-filters @filterChange="${this.filterChange}"></table-filters>
         <table-data caption=${this.caption}></table-data>
         <table-pagination
-          :perPage=${this.perPage}
+          perPage=${this.perPage}
           page=${this.page}
           maxPage=${this.maxPage}
           numberOfRecords=${this.numberOfRecords}
@@ -206,6 +214,7 @@ export class DynamicTableSearch extends LitElement {
   }
 
   render() {
+    const perPage = [...DynamicTable.PER_PAGE_LIST, -1]
     return html`
       <div class="tableSearch">
         <div class="clearfix">
@@ -213,10 +222,10 @@ export class DynamicTableSearch extends LitElement {
             <label>
               Show
               <select @change="${this.perPageChange}">
-                ${DynamicTable.PER_PAGE_LIST.map(item => {
+                ${perPage.map(item => {
                   return html`
                     <option key="${item}" value="${item}" ${this.perPage === item ? 'selected' : ''}>
-                      ${item}
+                      ${item === -1 ? 'All' : item}
                     </option>
                   `
                 })}
@@ -544,11 +553,15 @@ export class DynamicTablePagination extends LitElement {
   }
 
   getPagingInfoMessage() {
+    if (this.perPage === -1) {
+      return `Showing 1 to ${this.numberOfRecords} of ${this.numberOfRecords} entries`
+    } else {
     let firstRecord = (this.page - 1) * this.perPage
     firstRecord = firstRecord <= 0 ? 1 : firstRecord + 1
     let lastRecord = firstRecord - 1 + this.perPage
     lastRecord = lastRecord < this.numberOfRecords ? lastRecord : this.numberOfRecords
     return `Showing ${firstRecord} to ${lastRecord} of ${this.numberOfRecords} entries`
+    }
   }
 
   paginate() {
