@@ -74,7 +74,7 @@ export class DynamicTable extends LitElement {
           let finded = false
           for (let index = 0; index < keys2Search.length; index++) {
             const key = keys2Search[index];
-            finded = el[key]?.includes(this.q)
+            finded = el[key]?.toLowerCase().includes(this.q.toLowerCase())
             if (finded) {
               res.push(el)
               break
