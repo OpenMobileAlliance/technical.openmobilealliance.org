@@ -112,9 +112,9 @@ export class DynamicTable extends LitElement {
     if (this.selectedFilters.length > 0) {
       return this.selectedFilters.reduce((res, el) => {
         if (res.length === 0) {
-          res = this.data.filter(item => item[el.key].includes(el.value))
+          res = this.data.filter(item => item[el.key] === el.value)
         } else {
-          res = res.filter(item => item[el.key].includes(el.value))
+          res = res.filter(item => item[el.key] === el.value)
         }
         return res
       }, [])
@@ -302,7 +302,12 @@ export class DynamicTableFilters extends LitElement {
   }
 
   getFilterItemByKey(key) {
-    return this.stats[key] ? Object.keys(this.stats[key]) : []
+    if (this.stats[key]) {
+      let keys = Object.keys(this.stats[key])
+      keys.sort()
+      return keys
+    }
+    return []
   }
 
   isActiveFilter(key, item) {
