@@ -68,6 +68,11 @@ export class DynamicTable extends LitElement {
       let filteredData = this.filterData()
 
       const keys2Search = this.columns.filter(f => f.search).map(e => e.key)
+      this.filters.forEach(f => {
+        if (!keys2Search.includes(f.key)) {
+          keys2Search.push(f.key)
+        }
+      })
 
       if (this.q.length > 0) {
         filteredData = filteredData.reduce((res, el) => {
