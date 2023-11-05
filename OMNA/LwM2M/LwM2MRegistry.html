@@ -365,8 +365,8 @@
               $items.each(function processDDF () {
                 const urn = $(this).find('URN').text();
                 const objectID = $(this).find('ObjectID').text();
-                const ddfLink = $(this).find('DDFLink').text();
-                const tsLink = $(this).find('TSLink').text();
+                const ddfLink = Number($(this).find('DDFLink').text());
+                const tsLink = Number($(this).find('TSLink').text());
                 const tsURL = $(this).find('TS').text();
                 const name = $(this).find('Name').text();
                 const owner = $(this).find('Owner').text();
