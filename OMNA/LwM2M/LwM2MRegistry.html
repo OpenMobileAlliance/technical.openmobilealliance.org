@@ -253,10 +253,20 @@
         return row.ddfLink ? `<a href="${row.ddfURL}" title="download xml file">${row.objectID}</a>` : `${row.objectID}`
       }
 
+      window.exportObjectTableDDFLinkXmlCell = function exportObjectTableDDFLinkXmlCell(row) {
+        return row.ddfLink ? `"${row.ddfURL}"` : `"${row.objectID}"`
+      }
+
       window.formatObjectTableDDFEditorLinkCell = function formatObjectTableDDFEditorLinkCell(row) {
       return row.ddfLink ?
         `<a href="http://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=${encodeURIComponent(row.ddfURL)}" title="call the Editor">${row.objectID}</a>` :
         `${row.objectID}`
+      }
+
+      window.exportObjectTableDDFEditorLinkCell = function exportObjectTableDDFEditorLinkCell(row) {
+      return row.ddfLink ?
+        `"http://devtoolkit.openmobilealliance.org/OEditor/LWMOView?url=${encodeURIComponent(row.ddfURL)}"` :
+        `"${row.objectID}"`
       }
 
       window.formatObjectTableTSLinkCell = function formatObjectTableTSLinkCell(row) {
@@ -265,9 +275,19 @@
           `-`
       }
 
+      window.exportObjectTableTSLinkCell = function exportObjectTableTSLinkCell(row) {
+        return row.tsLink ?
+          `"${row.tsURL}"` : `"-"`
+      }
+
       window.formatResourceIdTableTSLinkCell = function formatResourceIdTableTSLinkCell(row) {
         return row.tsLink > 0 ?
           `<a href="${row.tsURL}">${row.resourceName}</a>` : `${row.resourceName}`
+      }
+
+      window.exportResourceIdTableTSLinkCell = function exportResourceIdTableTSLinkCell(row) {
+        return row.tsLink > 0 ?
+          `"${row.tsURL}"` : `"${row.resourceName}"`
       }
 
       $(document).ready(() => {
@@ -301,11 +321,22 @@
           const objectTable = document.getElementById('objectid-table')
           objectTable.columns = [
             { key: 'urn', title: 'URN / Verson', type: 'text', format: '', class: '', search: true},
-            { key: 'xmlLink', title: 'XML Name', type: 'function', format: window.formatObjectTableDDFLinkXmlCell, class: 'text-center'},
-            { key: 'xmlEditor', title: 'LwM2M Editor', type: 'function', format: window.formatObjectTableDDFEditorLinkCell, class: 'text-center'},
+            { key: 'xmlLink', title: 'XML Name', type: 'function',
+              format: window.formatObjectTableDDFLinkXmlCell,
+              export: window.exportObjectTableDDFLinkXmlCell,
+              class: 'text-center'
+            },
+            { key: 'xmlEditor', title: 'LwM2M Editor', type: 'function',
+              format: window.formatObjectTableDDFEditorLinkCell,
+              export: window.exportObjectTableDDFEditorLinkCell,
+              class: 'text-center'
+            },
             { key: 'name', title: 'Object Name', type: 'text', format: '', class: '', search: true},
             { key: 'owner', title: 'Owner', type: 'text', format: '', class: 'text-center', search: true},
-            { key: 'tsLink', title: 'Technical Specification', type: 'function', format: window.formatObjectTableTSLinkCell, class: 'text-center'},
+            { key: 'tsLink', title: 'Technical Specification', type: 'function',
+              format: window.formatObjectTableTSLinkCell,
+              export: window.exportObjectTableTSLinkCell,
+              class: 'text-center'},
             { key: 'description', title: 'Description', type: 'text', format: '', class: '', search: true},
           ]
 
@@ -394,8 +425,8 @@
 
           const reservedByVendorsTable = document.getElementById('reservedByVendors-table')
           reservedByVendorsTable.columns = [
-            { key: 'objectIDRange', title: 'XML Name', type: 'text', format: '', class: 'text-center', search: true},
-            { key: 'company', title: 'XML Name', type: 'text', format: '', class: 'text-center', search: true},
+            { key: 'objectIDRange', title: 'ObjectID Range', type: 'text', format: '', class: 'text-center', search: true},
+            { key: 'company', title: 'Company Name', type: 'text', format: '', class: 'text-center', search: true},
           ]
 
           reservedByVendorsTable.filters = [
@@ -442,7 +473,11 @@
           const resourceidTable = document.getElementById('resourceid-table')
           resourceidTable.columns = [
             { key: 'resourceID', title: 'ResourceID*', type: 'text', format: '', class: 'text-center', search: true },
-            { key: 'resourceName', title: 'Name/Technical Spec*', type: 'function', format: window.formatResourceIdTableTSLinkCell, search: true },
+            { key: 'resourceName', title: 'Name/Technical Spec*', type: 'function',
+              format: window.formatResourceIdTableTSLinkCell,
+              export: window.exportResourceIdTableTSLinkCell,
+              search: true
+            },
             { key: 'accessType', title: 'Operation*', type: 'text', format: '', class: 'text-center', search: true },
             { key: 'type', title: 'Type*', type: 'text', format: '', class: 'text-center', search: true },
             { key: 'range', title: 'Range/Enumeration*', type: 'text', format: '', class: 'text-center', search: true },
