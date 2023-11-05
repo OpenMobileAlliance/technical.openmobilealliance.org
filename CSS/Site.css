@@ -344,6 +344,13 @@ tr:hover .row-action span {
   border: none;
 }
 
+.vertical-align-text-top {
+  vertical-align: text-top;
+}
+
+.export-to-csv {
+  cursor: pointer;
+}
 
 .m-0 {
   margin: 0 !important;

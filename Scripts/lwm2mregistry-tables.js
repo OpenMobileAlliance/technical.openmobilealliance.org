@@ -38,6 +38,7 @@ export class DynamicTable extends LitElement {
     this.q = ''
     this.selectedFilters = []
     this.numberOfRecords = this.data.length
+    this.dataToExport = []
   }
 
   createRenderRoot() {
@@ -88,6 +89,9 @@ export class DynamicTable extends LitElement {
           return res
         }, [])
       }
+
+      // store data for export if requested
+      this.dataToExport = filteredData
 
       this.numberOfRecords = filteredData.length
       if (this.perPage === -1) {
@@ -183,12 +187,44 @@ export class DynamicTable extends LitElement {
     this.updateDisplayData()
   }
 
+  exportToCSV() {
+    // create csv header
+    const csvData = []
+
+    const header = this.columns.reduce((acc, col) => {
+      acc.push(`"${col.title}"`)
+      return acc
+    }, [])
+    csvData.push(header.join(','))
+    // populate csv data 
+
+    this.dataToExport.forEach(row => {
+      const rowData = this.columns.reduce((acc, col) => {
+        acc.push(col.export ? col.export(row) : `"${row[col.key]}"`)
+        return acc
+      }, [])
+      csvData.push(rowData.join(','))
+    })
+    // initiate townload
+    const link = document.createElement('a');
+    link.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvData.join('\n')));
+    link.setAttribute('download', 'data.csv');
+
+    link.style.display = 'none';
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+  }
+
   render() {
     return html`
        <div class="dataTables_wrapper no-footer">
         <table-search
           perPage=${this.perPage}
           @perPageChange="${this.perPageChange}"
+          @onExportToCSV="${this.exportToCSV}"
           @queryChenge="${this.queryChange}"
         ></table-search>
         <table-filters @filterChange="${this.filterChange}"></table-filters>
@@ -237,6 +273,16 @@ export class DynamicTableSearch extends LitElement {
               </select>
             </label>
           </div>
+          <div class="dataTables_length px-5">
+            <label
+              class="py-1 vertical-align-text-top export-to-csv"
+              title="Export selected data to CSV file"
+              @click="${this.onExportToCsv}"
+            >
+              Export
+              <i class="fa fa-cloud-download fa-lg" aria-hidden="true"></i>
+            </label>
+          </div>
           <div class="topic-search dataTables_filter">
             <label>
               Search
@@ -251,6 +297,10 @@ export class DynamicTableSearch extends LitElement {
   perPageChange(e) {
     this.perPage = e.target.value
     this.dispatchEvent(new CustomEvent('perPageChange', {detail: { value: this.perPage }, bubbles: true, composed: true}))
+  }
+
+  onExportToCsv() {
+    this.dispatchEvent(new CustomEvent('onExportToCSV', { bubbles: true, composed: true}))
   }
 
   search(e) {
