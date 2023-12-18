@@ -269,4 +269,9 @@
         <ObjectIDEndRange>35199</ObjectIDEndRange>
         <Company>Sensorbee AB</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35200</ObjectIDStartRange>
+        <ObjectIDEndRange>35249</ObjectIDEndRange>
+        <Company>CaraTech AB</Company>
+    </Item>
 </ReservedObjects>
