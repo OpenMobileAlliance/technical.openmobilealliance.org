@@ -279,4 +279,9 @@
         <ObjectIDEndRange>35299</ObjectIDEndRange>
         <Company>Ineo-Sense</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35300</ObjectIDStartRange>
+        <ObjectIDEndRange>35349</ObjectIDEndRange>
+        <Company>Vonroll-Hydro</Company>
+    </Item>
 </ReservedObjects>
