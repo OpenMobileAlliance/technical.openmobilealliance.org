@@ -14861,7 +14861,7 @@
     "fileName": "OMA-ETS-LightweightM2M-V1_0_1-20170926-A.pdf",
     "docType": "Enabler Test Specification",
     "url": "https://www.openmobilealliance.org/release/LightweightM2M/ETS/OMA-ETS-LightweightM2M-V1_0_1-20170926-A.pdf",
-    "description": "The purpose of this document is to provide test cases for LightweightM2M Enabler Release V1.0. The implementation of some features is optional for the Clients and/or the Servers in the LightweightM2M Enabler. The tests associated with these optional features are marked as "(Includes Optional Features)" in the test specification",
+    "description": "The purpose of this document is to provide test cases for LightweightM2M Enabler Release V1.0. The implementation of some features is optional for the Clients and/or the Servers in the LightweightM2M Enabler. The tests associated with these optional features are marked as (Includes Optional Features) in the test specification",
     "contentMediaType": "application/pdf"
   },
   {
