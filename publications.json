@@ -14853,6 +14853,19 @@
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
+    "enablerName": "OMA Enabler Test Specification for LightweightM2M (LwM2M)",
+    "enablerAbbreviation": "LightweightM2M",
+    "status": "Approved",
+    "version": "V1.0.1",
+    "releaseDate": "2017-09-26",
+    "fileName": "OMA-ETS-LightweightM2M-V1_0_1-20170926-A.pdf",
+    "docType": "Enabler Test Specification",
+    "url": "https://www.openmobilealliance.org/release/LightweightM2M/ETS/OMA-ETS-LightweightM2M-V1_0_1-20170926-A.pdf",
+    "description": "The purpose of this document is to provide test cases for LightweightM2M Enabler Release V1.0. The implementation of some features is optional for the Clients and/or the Servers in the LightweightM2M Enabler. The tests associated with these optional features are marked as (Includes Optional Features) in the test specification. The following items on an overall level are needed to adequately test the LwM2M enabler: A LwM2M Server and LwM2M client e.g., embedded in an M2M device or module connected via UDP and SMS with the LwM2M Server. The LwM2M enabler tests are carried out using the LwM2M protocol and objects and using the underlying protocols such as [CoAP]. The four data formats used in that document, namely Plain Text, Opaque, TLV and JSON data formats are respectively associated to the text/plain, application/octet-stream, application/vnd.oma.lwm2m+tlv, application/vnd.oma.lwm2m+json Media Types referred by LwM2M TS 1.0 and registered in IANA. ",
+    "contentMediaType": "application/pdf"
+  },
+  {
+    "organization": "https://technical.openmobilealliance.org/organization-info.json",
     "enablerName": "OMA LightweightM2M (LwM2M)",
     "enablerAbbreviation": "LightweightM2M",
     "status": "Approved",
