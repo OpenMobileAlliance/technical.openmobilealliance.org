@@ -15645,6 +15645,19 @@
     "description": "Efficiency, Security, and Cost Savings Through OMA LwM2M In an era characterized by relentless technological advancement and an ever-expanding network of connected devices, the utility sector faces a pressing need for innovation. To meet the challenges of today's utilities ecosystem, the OMA LightweightM2M Protocol emerges as a beacon of hope, promising to reshape the landscape of Field Area Management and unlock a myriad of benefits for utilities.",
     "contentMediaType": "application/pdf"
   },
+   {
+    "organization": "https://technical.openmobilealliance.org/organization-info.json",
+    "enablerName": "OMA LightweightM2M (LwM2M)",
+    "enablerAbbreviation": "LightweightM2M",
+    "status": "Approved",
+    "version": "",
+    "releaseDate": "2023-11-14",
+    "fileName": "OMA-WP-LwM2M-Metering-Use-Case-20231001-A",
+    "docType": "Whitepaper",
+    "url": "https://openmobilealliance.org/documents/whitepapers/OMA-WP-LwM2M-for-Utilities/OMA-WP-LwM2M-Utilities-Benefits-20231001-A.pdf",
+    "description": "LwM2M is a suitable Protocol for Secure Over-the-Air Meter Management. In the dynamic landscape of utility endpoint management, efficient and secure management of electricity, gas, and water meters using an open common method is paramount. LightweightM2M (LwM2M) emerges as the ideal protocol by seamlessly addressing: Utility pain points, Offering efficient services & objects, Enhancing security, and lowering operating costs, Management of utility applications, like meter-to-cash.",
+    "contentMediaType": "application/pdf"
+  },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
     "enablerName": "OMA DM List of supported Management Object",
