@@ -284,4 +284,9 @@
         <ObjectIDEndRange>35349</ObjectIDEndRange>
         <Company>vonRoll hydro</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35350</ObjectIDStartRange>
+        <ObjectIDEndRange>35399</ObjectIDEndRange>
+        <Company>Sensile Technologies SA</Company>
+    </Item>
 </ReservedObjects>
