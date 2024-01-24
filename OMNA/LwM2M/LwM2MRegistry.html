@@ -224,17 +224,6 @@
         $('#show-errors').show();
       };
 
-      // On back button
-      window.onpopstate = (e) => {
-        if(e.state){
-            window.location.href = window.location.href;
-            // document.getElementById("content").innerHTML = e.state.html;
-            // document.title = e.state.pageTitle;
-        } else {
-            window.location.href = window.location.href;
-        }
-      };
-
       $(document).ready(() => {
         $('#header').load("../../header.html");
         $('#footer').load("../../footer.html");
@@ -288,6 +277,14 @@
       window.exportResourceIdTableTSLinkCell = function exportResourceIdTableTSLinkCell(row) {
         return row.tsLink > 0 ?
           `"${row.tsURL}"` : `"${row.resourceName}"`
+      }
+
+      window.filterUrnSource = function filterUrnSource(urnSource) {
+        if (urnSource?.length > 0) {
+          console.log(urnSource)
+          const objectTable = document.getElementById('objectid-table')
+          objectTable.filterChange({detail: {key: 'urnSource', value: urnSource} })
+        }
       }
 
       $(document).ready(() => {
@@ -413,7 +410,6 @@
                 })
               })
               objectTable.updateData(newData)
-
             },
             error(request, textStatus, errorThrown) {
               window.console.debug('request', request);
@@ -608,6 +604,83 @@
           const environmentUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branchName}`;
             setSelectedValue($('#branch-selector-dd'), environmentUrl);
        }
+      })
+    </script>
+    <script defer>
+      // ObjectIDClasses onclick envent handlers 
+      window.filterOmaObjectsOnClick = function filterOmaObjects(e) {
+        const objectTable = document.getElementById('objectid-table')
+        objectTable.clearFilters()
+        const filterEvent = {
+        detail: {
+          key: "urnSource",
+          value: "OMA Labels",
+          }
+        }
+
+        objectTable.filterChange(filterEvent)
+        e.stopPropagation()
+      }
+
+      window.filter3rdPartyObjectsOnClick = function filter3rdPartyObjects(e) {
+        const objectTable = document.getElementById('objectid-table')
+        objectTable.clearFilters()
+         
+        const filterEvent = {
+        detail: {
+          key: "urnSource",
+          value: "Standards Organization Labels",
+          }
+        }
+
+        objectTable.filterChange(filterEvent)
+        e.stopPropagation()
+      }
+
+      window.filterCompanyObjectsOnClick = function filterCompanyObjects(e) {
+        const objectTable = document.getElementById('objectid-table')
+        objectTable.clearFilters()
+
+        const filterEvent = {
+        detail: {
+          key: "urnSource",
+          value: "Companies or Individuals",
+          }
+        }
+
+        objectTable.filterChange(filterEvent)
+        e.stopPropagation()
+      }
+
+      window.filterReservedObjectsOnClick = function filterReservedObjects(e) {
+        const objectTable = document.getElementById('objectid-table')
+        objectTable.clearFilters()
+        const filterEvent = {
+        detail: {
+          key: "name",
+          value: "TBD",
+          }
+        }
+
+        objectTable.filterChange(filterEvent)
+        e.stopPropagation()
+      }
+
+      $(window).on('load', function windowLoad() {
+        const el_oma = document.getElementById("filter_oma_objects")
+        el_oma.addEventListener('click', window.filterOmaObjectsOnClick)
+
+        const el_3rd = document.getElementById("filter_3rd_party_objects")
+        el_3rd.addEventListener('click', window.filter3rdPartyObjectsOnClick)
+
+        const el_company = document.getElementById("filter_company_objects")
+        el_company.addEventListener('click', window.filterCompanyObjectsOnClick)
+
+        const el_reserved = document.getElementById("filter_reserved_objects")
+        el_reserved.addEventListener('click', window.filterReservedObjectsOnClick)
+        
+        const el_resources = $("#filter_resources")
+        el_resources.replaceWith("-")
       })
     </script>
   </body>

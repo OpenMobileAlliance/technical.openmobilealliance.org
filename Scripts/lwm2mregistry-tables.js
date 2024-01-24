@@ -164,6 +164,12 @@ export class DynamicTable extends LitElement {
     this.updateDisplayData()
   }
 
+  clearFilters() {
+    while (this.selectedFilters.length > 0) {
+      this.selectedFilters.pop()
+    }
+  }
+
   filterChange(e) {
     const filterKey = e.detail.key
     const filterValue = e.detail.value
