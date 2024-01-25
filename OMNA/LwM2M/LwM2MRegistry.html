@@ -653,16 +653,8 @@
       }
 
       window.filterReservedObjectsOnClick = function filterReservedObjects(e) {
-        const objectTable = document.getElementById('objectid-table')
-        objectTable.clearFilters()
-        const filterEvent = {
-        detail: {
-          key: "name",
-          value: "TBD",
-          }
-        }
-
-        objectTable.filterChange(filterEvent)
+        const tabEl = document.getElementById('nav-reserved-tab')
+        tabEl.click()
         e.stopPropagation()
       }
 
