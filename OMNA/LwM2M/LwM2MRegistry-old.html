@@ -111,7 +111,7 @@
                 // document.getElementById("content").innerHTML = e.state.html;
                 // document.title = e.state.pageTitle;
             } else {
-                window.location.href = window.location.href;
+                console.log(window.location.href)
             }
         };
 
@@ -228,6 +228,50 @@
             //     $('#branch-selector-dd').val('')
             // }
 
+    </script>
+    <script defer>
+      // ObjectIDClasses onclick envent handlers 
+      window.filterOmaObjectsOnClick = function filterOmaObjects(e) {
+        e.preventDefault()
+        window.location.hash = "omalabel"
+      }
+
+      window.filter3rdPartyObjectsOnClick = function filter3rdPartyObjects(e) {
+        e.preventDefault()
+        window.location.hash = "#extlabel"
+      }
+
+      window.filterCompanyObjectsOnClick = function filterCompanyObjects(e) {
+        e.preventDefault()
+        window.location.hash = "#x_label"
+      }
+
+      window.filterReservedObjectsOnClick = function filterReservedObjects(e) {
+        e.preventDefault()
+        window.location.hash = "#reservedlabel"
+      }
+
+      window.filterResourcesOnClick = function filterResources(e) {
+        e.preventDefault()
+        window.location.hash = "#resources"
+      }
+
+      $(window).on('load', function windowLoad() {
+        const el_oma = document.getElementById("filter_oma_objects")
+        el_oma.addEventListener('click', window.filterOmaObjectsOnClick)
+
+        const el_3rd = document.getElementById("filter_3rd_party_objects")
+        el_3rd.addEventListener('click', window.filter3rdPartyObjectsOnClick)
+
+        const el_company = document.getElementById("filter_company_objects")
+        el_company.addEventListener('click', window.filterCompanyObjectsOnClick)
+
+        const el_reserved = document.getElementById("filter_reserved_objects")
+        el_reserved.addEventListener('click', window.filterReservedObjectsOnClick)
+
+        const el_resources = document.getElementById("filter_resources")
+        el_resources.addEventListener('click', window.filterResourcesOnClick)
+      })
     </script>
     <script src="../../Scripts/googleanalytics.js"></script>
 </head>
