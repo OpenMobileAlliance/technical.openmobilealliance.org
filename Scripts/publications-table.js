@@ -50,9 +50,11 @@ document.addEventListener('alpine:init', () => {
       { name: 'TFP', description: 'Test Files Package' },
       { name: 'TS', description: 'Technical Specification' },
       { name: 'WIDL', description: 'Web Interface Definition Language' },
+      { name: 'WP', description: 'Whitepaper' },
       { name: 'WSDL', description: 'Web Interface Definition Language' },
       { name: 'XML', description: 'Extensible Markup Language' },
       { name: 'XSD', description: 'XML Schema Document' },
+      { name: 'U', description: 'Unknown' },
     ],
     getDocTypeFromDescription(str) {
       return this.DOC_TYPES.filter(item => item.description === str)
