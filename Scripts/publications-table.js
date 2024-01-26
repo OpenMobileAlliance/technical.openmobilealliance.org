@@ -490,7 +490,7 @@ document.addEventListener('alpine:init', () => {
       `
     },
     getVersionUrl(item) {
-      const versionURl = item.url.replace(item.fileName, '')
+      const versionURl = item.url.substring(0, item.url.lastIndexOf('/') + 1)
       return `
         <a href="${versionURl}"
            target="_blank"
