@@ -49,6 +49,7 @@ document.addEventListener('alpine:init', () => {
       { name: 'SUP', description: 'Support Document' },
       { name: 'TFP', description: 'Test Files Package' },
       { name: 'TS', description: 'Technical Specification' },
+      { name: "WBF", description: "WAP Billing Framework" },
       { name: 'WIDL', description: 'Web Interface Definition Language' },
       { name: 'WP', description: 'Whitepaper' },
       { name: 'WSDL', description: 'Web Interface Definition Language' },

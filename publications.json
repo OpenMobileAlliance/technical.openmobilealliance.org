@@ -2624,7 +2624,8 @@
     "fileName": "OMA-WBF-V1_0-20021121-C.pdf",
     "url": "https://www.openmobilealliance.org/release/Billing/V1_0-20021216-C/OMA-WBF-V1_0-20021121-C.pdf",
     "description": "Wireless Application Protocol (WAP), as part of Open Mobile Alliance (OMA), is a result of continuous work to define an industry wide specification for developing applications that operate over wireless communication networks. The scope for OMA is to define a set of specifications to be used by service applications. The wireless market is growing very quickly and reaching new customers and providing new services. To enable operators and manufacturers to meet the challenges in advanced services, differentiat",
-    "contentMediaType": "application/pdf"
+    "contentMediaType": "application/pdf",
+    "docType": "WAP Billing Framework"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -2635,7 +2636,8 @@
     "releaseDate": "2002-12-16",
     "fileName": "OMA-WBF-V1_0-20021216-C.zip",
     "url": "https://www.openmobilealliance.org/release/Billing/V1_0-20021216-C/OMA-WBF-V1_0-20021216-C.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType": "WAP Billing Framework"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -7480,7 +7482,8 @@
     "releaseDate": "2004-01-13",
     "fileName": "OMA-DM-V1_1_2-20040113-A.zip",
     "url": "https://www.openmobilealliance.org/release/DM/V1_1_2-20040113-A/OMA-DM-V1_1_2-20040113-A.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType": "Enabler Release Package"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -8782,7 +8785,8 @@
     "releaseDate": "2004-06-25",
     "fileName": "OMA-DRM-V1_0-20040625-A.zip",
     "url": "https://www.openmobilealliance.org/release/DRM/V1_0-20040625-A/OMA-DRM-V1_0-20040625-A.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType": "Enabler Release Package"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -10950,7 +10954,8 @@
     "releaseDate": "2004-06-25",
     "fileName": "OMA-DL-V1_0-20040625-A.zip",
     "url": "https://www.openmobilealliance.org/release/Download/V1_0-20040625-A/OMA-DL-V1_0-20040625-A.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType": "Enabler Release Package"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -12018,7 +12023,8 @@
     "releaseDate": "2011-11-22",
     "fileName": "ERP-GPM-V1_0-20111122-A.zip",
     "url": "https://www.openmobilealliance.org/release/GPM/V1_0-20111122-A/ERP-GPM-V1_0-20111122-A.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType": "Enabler Release Package"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -12131,7 +12137,9 @@
     "fileName": "OMA-GamingPlatform-V1_0-20030612-C.pdf",
     "url": "https://www.openmobilealliance.org/release/GS/V1_0-20030612-C/OMA-GamingPlatform-V1_0-20030612-C.pdf",
     "description": "The potential scope of a gaming platform is enormous. A pragmatic standpoint has, therefore, been taken, where initial efforts have been concentrated in those areas that are deemed to reap most benefit for the game developer. Specifically, in the first release of the API, the following areas are addressed: • Session management: provides the identifiers that bind the user interactions into single concept of a game, provides access to the other APIs and provides the interface through which the lifecycle of ga",
-    "contentMediaType": "application/pdf"
+    "contentMediaType": "application/pdf",
+    "docType": "Technical Specification"
+
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -12142,7 +12150,8 @@
     "releaseDate": "2003-06-12",
     "fileName": "OMA-GS-v1_0-20030612-C.zip",
     "url": "https://www.openmobilealliance.org/release/GS/V1_0-20030612-C/OMA-GS-v1_0-20030612-C.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType": "Technical Specification"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -12800,7 +12809,8 @@
     "fileName": "OMA-RD_IM-V1_0_0-20041118-C.pdf",
     "url": "https://www.openmobilealliance.org/release/IM/V1_0_0-20041118-C/OMA-RD_IM-V1_0_0-20041118-C.pdf",
     "description": "This document describes use cases of Instant Messaging (IM) in mobile and requirements for a wireless IM solution within OMA. The overall goal of this requirements document is to investigate IM service in mobile from service provider, technological and end-users’ demands. This document contributes the development of an IM Solution for OMA.   The overall goals of an OMA IM Solution can be stated as:  • Low latency (i.e. as close to real time as possible for an IM message exchange ) • Optimized and efficient ",
-    "contentMediaType": "application/pdf"
+    "contentMediaType": "application/pdf",
+    "docType": "Requirement Document"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -13106,7 +13116,8 @@
     "releaseDate": "2002-11-05",
     "fileName": "OMA-IMPS-V1_1-20021105-A.zip",
     "url": "https://www.openmobilealliance.org/release/IMPS/V1_1-20021001-A/OMA-IMPS-V1_1-20021105-A.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType": "Enabler Release Package"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -17715,7 +17726,8 @@
     "releaseDate": "2004-07-15",
     "fileName": "OMA-MMS-V1_1-20040715-A.zip",
     "url": "https://www.openmobilealliance.org/release/MMS/V1_1-20040715-A/OMA-MMS-V1_1-20040715-A.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType":"Enabler Release Package"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -19318,7 +19330,8 @@
     "fileName": "OMA-MWS_RD-V1_0-20031120-A.pdf",
     "url": "https://www.openmobilealliance.org/release/OWSER/V1_0-20040715-A/OMA-MWS_RD-V1_0-20031120-A.pdf",
     "description": "This document provides OMA requirements for mobile web services  The  requirements  are  primarily  based  on  the  use  cases  compiled  by  the  Mobile  Web  Service  Group  [Error!  Reference  source not found.].  The output of the OMA Architecture use cases [Error! Reference source not found.], OMA REQ use cases and use cases produced by other working groups further refined the requirements specified in this document. The requirements specified in this document shall be adhered to by all OMA Web Service",
-    "contentMediaType": "application/pdf"
+    "contentMediaType": "application/pdf",
+    "docType":"Requirement Document"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -19381,7 +19394,8 @@
     "releaseDate": "2004-07-15",
     "fileName": "OMA-OWSER-V1_0-20040715-A.zip",
     "url": "https://www.openmobilealliance.org/release/OWSER/V1_0-20040715-A/OMA-OWSER-V1_0-20040715-A.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType":"Enabler Release Package"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -19393,7 +19407,8 @@
     "fileName": "OMA-RD_MWS_NI-V1_0-20031120-A.pdf",
     "url": "https://www.openmobilealliance.org/release/OWSER/V1_0-20040715-A/OMA-RD_MWS_NI-V1_0-20031120-A.pdf",
     "description": "This document lists the requirements generated by the OMA Mobile Web Services (MWS) Working Group in the area of Identity Management.",
-    "contentMediaType": "application/pdf"
+    "contentMediaType": "application/pdf",
+    "docType":"Enabler Release Package"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -21083,7 +21098,8 @@
     "releaseDate": "2018-07-10",
     "fileName": "OMA-ERP_LwM2M_Server-V1_1-20180710-A.zip",
     "url": "https://www.openmobilealliance.org/release/ObjLwM2M_Server/V1_1-20180710-A/OMA-ERP_LwM2M_Server-V1_1-20180710-A.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType":"Enabler Release Package"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -31004,7 +31020,8 @@
     "fileName": "OMA-RD_CSS-V1_1-20031104-C.pdf",
     "url": "https://www.openmobilealliance.org/release/WCSS/V1_1-20031104-C/OMA-RD_CSS-V1_1-20031104-C.pdf",
     "description": "This document defines the requirements for a new conformance baseline of the Wireless CSS Specification [WCSS].  It creates a specific minimum client profile aimed at the mobile device market, and is specifically targeted at assuring a consistent level of support for presentational control in the mobile phone browser marketplace. All the conformance baseline requirements defined herein profile the work completed by WAPForum and W3C, and contained in the WAPForum WCSS [WCSS] specification, contained in WAP 2",
-    "contentMediaType": "application/pdf"
+    "contentMediaType": "application/pdf",
+    "docType":"Requirement Document"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -31016,7 +31033,8 @@
     "fileName": "OMA-RD_WAPproxyBasedRedirect-V1_0-20030603-C.pdf",
     "url": "https://www.openmobilealliance.org/release/WPBR/V1_0-20030603-C/OMA-RD_WAPproxyBasedRedirect-V1_0-20030603-C.pdf",
     "description": "The scope of this document includes functional requirements for the operation of WAP Proxy-Based Redirect. This document contains information applicable to network operators, WAP proxy manufacturers, terminal manufacturers, independent software vendors, and service providers.",
-    "contentMediaType": "application/pdf"
+    "contentMediaType": "application/pdf",
+    "docType":"Requirement Document"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
@@ -31079,7 +31097,8 @@
     "releaseDate": "2004-06-15",
     "fileName": "OMA-WPKI-V1_0-20040615-C.zip",
     "url": "https://www.openmobilealliance.org/release/WPKI/V1_0-20040615-C/OMA-WPKI-V1_0-20040615-C.zip",
-    "contentMediaType": "application/zip"
+    "contentMediaType": "application/zip",
+    "docType":"Enabler Release Package"
   },
   {
     "organization": "https://technical.openmobilealliance.org/organization-info.json",
