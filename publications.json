@@ -15715,7 +15715,7 @@
     "status": "Approved",
     "version": "",
     "releaseDate": "2023-11-14",
-    "fileName": "OMA-WP-LwM2M-Metering-Use-Case-20231001-A",
+    "fileName": "OMA-WP-LwM2M-Metering-Use-Case-20231001-A.pdf",
     "docType": "Whitepaper",
     "url": "https://www.openmobilealliance.org/documents/whitepapers/OMA-WP-LwM2M-for-Utilities/OMA-WP-LwM2M-Metering-Use-Case-20231001-A.pdf",
     "description": "LwM2M is a suitable Protocol for Secure Over-the-Air Meter Management. In the dynamic landscape of utility endpoint management, efficient and secure management of electricity, gas, and water meters using an open common method is paramount. LightweightM2M (LwM2M) emerges as the ideal protocol by seamlessly addressing: Utility pain points, Offering efficient services & objects, Enhancing security and lowering operating costs, Management of utility applications like meter-to-cash. This whitepaper, titled Unlocking Utilities Savings: LwM2M for Utilities Meter Management, highlights how the LightweightM2M (LwM2M) protocol addresses key utility pain points, including secure device management, connectivity monitoring, and compliance. We also explore how LwM2M's services and Object IDs can significantly reduce operating costs, revolutionizing utility management. Join us to discover how LwM2M is transforming smart meter management in the utility sector, enhancing efficiency, security, and cost-effectiveness.",
