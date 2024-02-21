@@ -289,4 +289,9 @@
         <ObjectIDEndRange>35399</ObjectIDEndRange>
         <Company>Sensile Technologies SA</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35400</ObjectIDStartRange>
+        <ObjectIDEndRange>35449</ObjectIDEndRange>
+        <Company>Grinn SP</Company>
+    </Item>
 </ReservedObjects>
