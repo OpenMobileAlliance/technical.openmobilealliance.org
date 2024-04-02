@@ -294,4 +294,9 @@
         <ObjectIDEndRange>35449</ObjectIDEndRange>
         <Company>Watts A/S</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35450</ObjectIDStartRange>
+        <ObjectIDEndRange>35499</ObjectIDEndRange>
+        <Company>Grinn sp. z.o.o</Company>
+    </Item>
 </ReservedObjects>
