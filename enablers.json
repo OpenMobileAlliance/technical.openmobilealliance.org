@@ -5631,6 +5631,12 @@
             "status": "Approved",
             "version": "V1.0.1",
             "date": "2019-02-21"
+          },
+          {
+            "name": "V1_0_2-20240312-A",
+            "status": "Approved",
+            "version": "V1.0.2",
+            "date": "2024-03-12"
           }
         ]
       }
