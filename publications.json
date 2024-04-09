@@ -14180,9 +14180,9 @@
     "enablerName": "OMA LWM2M Object Device Capability Management",
     "enablerAbbreviation": "LWM2M_DevCapMgmt",
     "status": "Approved",
-    "version": "V2.0",
+    "version": "V2.0.1",
     "releaseDate": "2024-03-12",
-    "fileName": "OMA-SUP-XML_15-V2_0-20201208-A.xml",
+    "fileName": "OMA-SUP-XML_15-V2_0_1-20240212-A.xml",
     "docType": "Support Document",
     "url": "https://www.openmobilealliance.org/release/LWM2M_DevCapMgmt/V2_0_1-20240312-A/OMA-SUP-XML_15-V2_0_1-20240212-A.xml",
     "contentMediaType": "application/xml"
