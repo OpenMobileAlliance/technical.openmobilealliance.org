@@ -299,4 +299,9 @@
         <ObjectIDEndRange>35499</ObjectIDEndRange>
         <Company>Grinn sp. z.o.o</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35500</ObjectIDStartRange>
+        <ObjectIDEndRange>35549</ObjectIDEndRange>
+        <Company>Lactec</Company>
+    </Item>
 </ReservedObjects>
