@@ -304,4 +304,9 @@
         <ObjectIDEndRange>35549</ObjectIDEndRange>
         <Company>Lactec</Company>
     </Item>
+     <Item>
+        <ObjectIDStartRange>35550</ObjectIDStartRange>
+        <ObjectIDEndRange>35599</ObjectIDEndRange>
+        <Company>Tecsys do Brasil</Company>
+    </Item>
 </ReservedObjects>
