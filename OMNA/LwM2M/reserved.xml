@@ -309,4 +309,9 @@
         <ObjectIDEndRange>35599</ObjectIDEndRange>
         <Company>Tecsys do Brasil</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35600</ObjectIDStartRange>
+        <ObjectIDEndRange>35649</ObjectIDEndRange>
+        <Company>Axioma Metering</Company>
+    </Item>
 </ReservedObjects>
