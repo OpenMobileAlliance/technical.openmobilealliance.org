@@ -314,4 +314,9 @@
         <ObjectIDEndRange>35649</ObjectIDEndRange>
         <Company>Axioma Metering</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35650</ObjectIDStartRange>
+        <ObjectIDEndRange>35699</ObjectIDEndRange>
+        <Company>T-Mobile</Company>
+    </Item>
 </ReservedObjects>
