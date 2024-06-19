@@ -5541,6 +5541,12 @@
             "status": "Approved",
             "version": "V1.2.1",
             "date": "2022-12-09"
+          },
+          {
+            "name": "V1_2_2-20240613-A",
+            "status": "Approved",
+            "version": "V1.2.2",
+            "date": "2024-06-13"
           }
         ]
       }
