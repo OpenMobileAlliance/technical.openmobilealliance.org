@@ -319,4 +319,9 @@
         <ObjectIDEndRange>35699</ObjectIDEndRange>
         <Company>T-Mobile</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35700</ObjectIDStartRange>
+        <ObjectIDEndRange>35749</ObjectIDEndRange>
+        <Company>Moxa Inc.</Company>
+    </Item>
 </ReservedObjects>
