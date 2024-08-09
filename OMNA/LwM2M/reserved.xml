@@ -324,4 +324,9 @@
         <ObjectIDEndRange>35749</ObjectIDEndRange>
         <Company>Moxa Inc.</Company>
     </Item>
+     <Item>
+        <ObjectIDStartRange>357500</ObjectIDStartRange>
+        <ObjectIDEndRange>35799</ObjectIDEndRange>
+        <Company>Atlas Copco</Company>
+    </Item>
 </ReservedObjects>
