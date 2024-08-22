@@ -329,4 +329,9 @@
         <ObjectIDEndRange>35799</ObjectIDEndRange>
         <Company>Atlas Copco</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35800</ObjectIDStartRange>
+        <ObjectIDEndRange>35849</ObjectIDEndRange>
+        <Company>Autosen</Company>
+    </Item>
 </ReservedObjects>
