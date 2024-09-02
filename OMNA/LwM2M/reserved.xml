@@ -334,4 +334,9 @@
         <ObjectIDEndRange>35849</ObjectIDEndRange>
         <Company>Autosen</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35850</ObjectIDStartRange>
+        <ObjectIDEndRange>35899</ObjectIDEndRange>
+        <Company>Paradox Engineering SA</Company>
+    </Item>
 </ReservedObjects>
