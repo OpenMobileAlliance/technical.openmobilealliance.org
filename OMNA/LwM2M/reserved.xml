@@ -339,4 +339,9 @@
         <ObjectIDEndRange>35899</ObjectIDEndRange>
         <Company>Paradox Engineering SA</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35900</ObjectIDStartRange>
+        <ObjectIDEndRange>35949</ObjectIDEndRange>
+        <Company>Remoticom</Company>
+    </Item>
 </ReservedObjects>
