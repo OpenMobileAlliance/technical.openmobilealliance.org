@@ -344,4 +344,9 @@
         <ObjectIDEndRange>35949</ObjectIDEndRange>
         <Company>Remoticom</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>35950</ObjectIDStartRange>
+        <ObjectIDEndRange>35999</ObjectIDEndRange>
+        <Company>Utonomy</Company>
+    </Item>
 </ReservedObjects>
