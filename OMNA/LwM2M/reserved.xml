@@ -349,4 +349,9 @@
         <ObjectIDEndRange>35999</ObjectIDEndRange>
         <Company>Utonomy</Company>
     </Item>
+    <Item>
+        <ObjectIDStartRange>36000</ObjectIDStartRange>
+        <ObjectIDEndRange>36049</ObjectIDEndRange>
+        <Company>IOX GmbH</Company>
+    </Item>
 </ReservedObjects>
