@@ -1,4 +1,5 @@
 **Note: This repository is archived and will not receive further updates, including dependency updates or security fixes from bots like Dependabot.**
+For any updates or forks, please refer to [https://github.com/OpenMobileAlliance/oma-knowledge-base].  
 
 
 # How to run the technical.openmobilealliance.org pages locally
