@@ -1,3 +1,6 @@
+**Note: This repository is archived and will not receive further updates, including dependency updates or security fixes from bots like Dependabot.**
+
+
 # How to run the technical.openmobilealliance.org pages locally
 
 ### Install node on Mac:
@@ -76,5 +79,3 @@ The `enablers.json` file contains three main objects:
             * `version`: version VX.Y.Z
             * `date`: date when the Release was approved, in the format: YYYY-MM-DD
             * `display`: this property allows override any display critieria. If the value is set to `true`, then the Release version details will be displayed independent of the rendering criteria. If the value is set to `false`, then the Release version won't be displayed independent of the rendering criteria. If it is set to `false` the information for that Release will be displayed when displaying ALL the versions for that Enabler.
-         
-        * Note: This repository is archived and will not receive further updates, including dependency updates or security fixes from bots like Dependabot.
